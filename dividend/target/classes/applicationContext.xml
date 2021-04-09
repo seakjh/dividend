@@ -23,6 +23,7 @@
 	</bean>
 	
 	<!-- Transaction 설정
+	 -->
 	<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource" />
 	</bean>		
@@ -38,7 +39,6 @@
 		<aop:pointcut id="txPointcut" expression="execution(* com.springbook.biz..impl*(..))" />
 		<aop:advisor pointcut-ref="txPointcut"  advice-ref="txAdvice"/>
 	</aop:config>
-	 -->
 	
 	
 </beans>
