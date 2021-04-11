@@ -1,7 +1,5 @@
 package com.baedang.biz.dividend;
 
-import java.sql.Date;
-
 public class DividendVO {
 	private String corp_code;
 	private String corp_name;
@@ -13,6 +11,7 @@ public class DividendVO {
 	private int oneyearago;
 	private int twoyearago;
 	private int threeyearago;
+	private String searchCondition;
 	private String searchKeyword;
 	
 	public String getCorp_code() {
@@ -74,6 +73,12 @@ public class DividendVO {
 	}
 	public void setThreeyearago(int threeyearago) {
 		this.threeyearago = threeyearago;
+	}
+	public String getSearchCondition() {
+		return searchCondition;
+	}
+	public void setSearchCondition(String searchCondition) {
+		this.searchCondition = searchCondition;
 	}
 	public String getSearchKeyword() {
 		return searchKeyword;

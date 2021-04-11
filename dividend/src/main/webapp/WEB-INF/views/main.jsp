@@ -19,6 +19,33 @@ th, td {
 <script src="/resources/js/jquery-3.6.0.js"></script>
 <script type="text/javascript">
 $(function() {
+	$.ajax({
+		contentType:"application/json",
+		dataType:"json",
+		url:"getDividendList.do",
+		type:"get",
+		success:function(data) {
+			getList(data);
+		}
+	});
+	
+	$('#submit').click(function() {
+		var searchCondition = $('.searchCondition').val();
+		var searchKeyword = $('.searchKeyword').val();
+		var sendData = 'searchCondition='+searchCondition+'&searchKeyword='+searchKeyword;
+		
+		$.post("getDividendList.do", sendData, function(data) {
+			getList(data);
+		});
+		
+		return false;
+	});
+	
+});
+
+function getList(dividend) {
+	$('#divi-data').empty();
+	
 	$('#divi-data').append(
 		"<tr>"
 		+"<th>종목코드</th>"
@@ -30,19 +57,7 @@ $(function() {
 		+"<th>2년전 배당금</th>"
 		+"<th>3년전 배당금</th>"
 		+"</tr>"
-	);
-	$.ajax({
-		contentType:"application/json",
-		dataType:"json",
-		url:"getDividendList.do",
-		type:"get",
-		success:function(data) {
-			getList(data);
-		}
-	});
-});
-
-function getList(dividend) {
+	);	
 	$.each(dividend, function(i, val) {
 		$('#divi-data').append(
 			"<tr>"
@@ -61,12 +76,26 @@ function getList(dividend) {
 </script>
 </head>
 <body>
+<%--@ include file="포함 할 파일" --%>
 	<!--
 	<center>
 	</center>
 	-->
 	<h1>배당의 민족</h1>
 	<h3>주식배당 정보 모음</h3>
+	<table>
+		<tr>
+			<td>
+				<select name="searchCondition" class="searchCondition">
+					<c:forEach items="${conditionMap }" var="option">
+						<option value="${option.value }">${option.key }
+					</c:forEach>						
+				</select> 
+				<input name="searchKeyword" class="searchKeyword" type="text" /> 
+				<input type="button" id="submit" value="검색" />
+			</td>
+		</tr>
+	</table>
 	<a href="login.do">로그인</a>
 	<a href="join.do">회원가입</a>
 	<a href="mypage.do">마이페이지</a>
@@ -75,20 +104,6 @@ function getList(dividend) {
 	<a href="calculate.do">복리계산기</a>
 	<!-- 검색 시작 
 	-->
-	<form action="getBoardList.do" method="post">
-		<table>
-			<tr>
-				<td align="right">
-				<select name="searchCondition">
-					<c:forEach items="${conditionMap }" var="option">
-						<option value="${option.value }">${option.key }
-					</c:forEach>							
-				</select> 
-				<input name="searchKeyword" type="text" /> 
-				<input type="submit" value="검색" /></td>
-			</tr>
-		</table>
-	</form>
 	<hr>
 	<br>
 	<br>

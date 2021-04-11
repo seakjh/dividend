@@ -32,17 +32,17 @@ public class DividendDAO {
 	}
 	
 	public List<DividendVO> getDividendList(DividendVO vo) {
-		return mybatis.selectList("DividendDAOTemp.getDividendList", vo);
 		//일반적인 리스트 출력
-//		if (vo.getSearchCondition().equals("TITLE")) {
-//			return mybatis.selectList("BoardDAOTemp.getBoardList_T", vo);
-//		}
-//		else if (vo.getSearchCondition().equals("CONTENT")) {
-//			return mybatis.selectList("BoardDAOTemp.getBoardList_C", vo);
-//		}
-//		else {
-//			return mybatis.selectList("BoardDAOTemp.getBoardList_T", vo);
-//		}
+		//return mybatis.selectList("DividendDAOTemp.getDividendList", vo);
+		if (vo.getSearchCondition().equals("CORP_NAME")) {
+			return mybatis.selectList("DividendDAOTemp.getDividendList", vo);
+		}
+		else if (vo.getSearchCondition().equals("CORP_CODE")) {
+			return mybatis.selectList("DividendDAOTemp.getDividendList_C", vo);
+		}
+		else {
+			return mybatis.selectList("DividendDAOTemp.getDividendList", vo);
+		}
 	}
 	
 }
