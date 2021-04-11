@@ -13,8 +13,6 @@ public class DividendServiceImpl implements DividendService {
 	
 	@Autowired
 	private DividendDAO dividendDAO;
-	//private BoardDAOMyBatisFirst boardDAO;
-	//private BoardDAO boardDAO;
 
 	@Override
 	public List<DividendVO> getDividendList(DividendVO vo) {

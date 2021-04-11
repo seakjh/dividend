@@ -60,12 +60,11 @@ public class DividendController {
 	}
 	
 	//상세 조회
-//	@RequestMapping("/getBoard.do")
-//	public String getBoard(BoardVO vo, Model model) {
-//		System.out.println("글 상세 조회 처리");
-//		BoardVO board = boardService.getBoard(vo);
-//		model.addAttribute("board", board);
-//		return "getBoard.jsp";		
-//	}
+	@RequestMapping("/getDividend.do")
+	public String getDividend(DividendVO vo, Model model) {
+		DividendVO dividend = dividendService.getDividend(vo);
+		model.addAttribute("dividend", dividend);
+		return "dividend/getDividend";		
+	}
 	
 }

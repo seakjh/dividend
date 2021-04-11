@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,12 +7,25 @@
 <title>배당의 민족</title>
 <style type="text/css">
 table {
-	border: 1px solid #000;
 	border-collapse: collapse;
+	border-spacing: 0;
 	width: 100%;
+}
+tr {
+	border-bottom: 1px soid #ccc;
 }
 th, td {
 	width: 12.5%;
+}
+th {
+    border-width: 2px 0 1px;
+    border-style: solid;
+    border-color: #333;
+}
+td {
+    border-width: 0px 0 1px;
+    border-style: solid;
+    border-color: #ccc;
 }
 </style>
 <%@ include file="./include/head.jsp" %>
@@ -60,7 +72,7 @@ function getList(dividend) {
 	);	
 	$.each(dividend, function(i, val) {
 		$('#divi-data').append(
-			"<tr>"
+			"<tr onClick='getDividend("+this.corp_code+")' style='cursor:pointer;'  onMouseOver=\"this.style.background='#fcc'\" onMouseOut=\"this.style.background=''\">"
 			+"<td align='center'>"+this.corp_code+"</td>"
 			+"<td align='center'>"+this.corp_name+"</td>"
 			+"<td align='center'>"+this.corp_type+"</td>"
@@ -72,6 +84,10 @@ function getList(dividend) {
 			+"</tr>"
 		);
 	});
+}
+
+function getDividend(code) {
+	$(location).attr('href',"getDividend.do?corp_code="+code);
 }
 </script>
 </head>
@@ -85,7 +101,7 @@ function getList(dividend) {
 <%@ include file="./include/header.jsp" %>
 
 <div id="container">
-	<table id="divi-data" border="1">
+	<table id="divi-data">
 	</table>
 </div>
 	
