@@ -44,7 +44,7 @@ public class DividendDAO {
 		//일반적인 리스트 출력
 		//return mybatis.selectList("DividendDAOTemp.getDividendList", vo);
 		if (vo.getSearchCondition().equals("CORP_NAME")) {
-			return mybatis.selectList("DividendDAOTemp.getDividendList", vo);
+			return mybatis.selectList("DividendDAOTemp.getDividendList_N", vo);
 		}
 		else if (vo.getSearchCondition().equals("CORP_CODE")) {
 			return mybatis.selectList("DividendDAOTemp.getDividendList_C", vo);

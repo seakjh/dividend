@@ -54,7 +54,7 @@ footer {
 </style>
 <%@ include file="./include/head.jsp"%>
 <script type="text/javascript">
-var count =10;
+var count =0;
 
 $(function() {
 	moreList(); //함수 호출
@@ -75,6 +75,9 @@ $(function() {
 		var sendData = 'searchCondition='+searchCondition+'&searchKeyword='+searchKeyword;
 		
 		$.post("getDividendList.do", sendData, function(data) {
+			if(data.length < 10){
+				$("#addBtn").remove();   // 더보기 버튼을 div 클래스로 줘야 할 수도 있음
+			}
 			getList(data);
 		});
 		
@@ -84,7 +87,7 @@ $(function() {
 });
 
 function moreList() {
-	count = count+10;
+	count = count+20;
 	console.log("count", count); 
 	
 	$.ajax({

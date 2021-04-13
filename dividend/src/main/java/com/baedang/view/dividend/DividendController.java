@@ -24,12 +24,13 @@ public class DividendController {
 	@Autowired
 	private DividendService dividendService;
 	
+	//메인페이지 로딩과 동시에 ajax로 목록을 출력
 	@RequestMapping(value="/getDividendList.do", method = RequestMethod.GET)
 	@ResponseBody
 	public List<DividendVO> getDividendList(@RequestParam("count") int count, Model model, DividendVO vo) throws Exception {
 		vo.setCount(count);
 		if (vo.getSearchCondition() == null) {
-			vo.setSearchCondition("CORP_NAME");
+			vo.setSearchCondition("");
 		}
 		
 		if (vo.getSearchKeyword() == null) {

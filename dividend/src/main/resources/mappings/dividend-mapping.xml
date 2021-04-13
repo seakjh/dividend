@@ -48,15 +48,21 @@
 	]]>
 </select>
 
+<select id="getDividendList_N" resultType="dividend" parameterType="dividend">
+	<![CDATA[
+		select corp_code, corp_name, corp_type, corp_status, to_char(dividend_month, 'yyyy/mm') as dividend_month, dividend_money, dividend_rate, oneyearago, twoyearago, threeyearago
+		from dividend
+		where corp_name like '%'||#{searchKeyword}||'%'
+		order by dividend_money desc
+	]]>
+</select>
+
 <select id="getDividendList_C" resultType="dividend" parameterType="dividend">
 	<![CDATA[
-		select * from 
-		(select rownum rnum, corp_code, corp_name, corp_type, corp_status, 
-		to_char(dividend_month, 'yyyy/mm') as dividend_month, dividend_money, 
-		dividend_rate, oneyearago, twoyearago, threeyearago from
-		(select * from dividend order by dividend_money desc))
+		select corp_code, corp_name, corp_type, corp_status, to_char(dividend_month, 'yyyy/mm') as dividend_month, dividend_money, dividend_rate, oneyearago, twoyearago, threeyearago
+		from dividend
 		where corp_code like '%'||#{searchKeyword}||'%'
-		and rnum <= #{count}
+		order by dividend_money desc
 	]]>
 </select>
 
