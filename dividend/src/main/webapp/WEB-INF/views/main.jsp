@@ -1,4 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page import="com.baedang.biz.dividend.DividendVO"%>
+<%@page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -11,27 +14,52 @@ table {
 	border-spacing: 0;
 	width: 100%;
 }
+
 tr {
 	border-bottom: 1px soid #ccc;
 }
-th, td {
-	width: 12.5%;
-}
+
 th {
-    border-width: 2px 0 1px;
-    border-style: solid;
-    border-color: #333;
+	border-width: 2px 0 1px;
+	border-style: solid;
+	border-color: #333;
 }
+
 td {
-    border-width: 0px 0 1px;
-    border-style: solid;
-    border-color: #ccc;
+	border-width: 0px 0 1px;
+	border-style: solid;
+	border-color: #ccc;
+}
+
+a {
+	text-decoration: none;
+	color: #333;
+}
+
+a:hover {
+	color: #c33;
+}
+
+ul {
+	list-style-type: none;
+}
+
+li {
+	float: left;
+}
+
+footer {
+	clear: both;
 }
 </style>
-<%@ include file="./include/head.jsp" %>
+<%@ include file="./include/head.jsp"%>
 <script type="text/javascript">
+var count =10;
+
 $(function() {
-	$.ajax({
+	moreList(); //함수 호출
+	
+/* 	$.ajax({
 		contentType:"application/json",
 		dataType:"json",
 		url:"getDividendList.do",
@@ -39,7 +67,7 @@ $(function() {
 		success:function(data) {
 			getList(data);
 		}
-	});
+	}); */
 	
 	$('#submit').click(function() {
 		var searchCondition = $('.searchCondition').val();
@@ -55,56 +83,91 @@ $(function() {
 	
 });
 
+function moreList() {
+	count = count+10;
+	console.log("count", count); 
+	
+	$.ajax({
+		contentType:"application/json",
+		dataType:"json",
+		url:"getDividendList.do",
+		type : "get",
+		data : {
+			"count":count
+		},
+		success : function(data) {
+			if(data.length < 10){
+				$("#addBtn").remove();   // 더보기 버튼을 div 클래스로 줘야 할 수도 있음
+			}
+			else{
+				if(data.length > 0){
+					getList(data);
+				}
+			}
+		}
+	});
+}
+
 function getList(dividend) {
 	$('#divi-data').empty();
 	
 	$('#divi-data').append(
 		"<tr>"
-		+"<th>종목코드</th>"
-		+"<th>종목명</th>"
-		+"<th>종목유형</th>"
-		+"<th>배당지급월</th>"
-		+"<th>배당금</th>"
-		+"<th>1년전 배당금</th>"
-		+"<th>2년전 배당금</th>"
-		+"<th>3년전 배당금</th>"
+		+"<th align='center' width='15%'>종목코드</th>"
+		+"<th align='center' width='15%'>종목명</th>"
+		+"<th align='right' width='5%'>종목유형</th>"
+		+"<th align='right' width='15%'>배당지급월</th>"
+		+"<th align='right' width='12.5%'>배당금</th>"
+		+"<th align='right' width='12.5%'>1년전 배당금</th>"
+		+"<th align='right' width='12.5%'>2년전 배당금</th>"
+		+"<th align='right' width='12.5%'>3년전 배당금</th>"
 		+"</tr>"
 	);	
 	$.each(dividend, function(i, val) {
 		$('#divi-data').append(
-			"<tr onClick='getDividend("+this.corp_code+")' style='cursor:pointer;'  onMouseOver=\"this.style.background='#fcc'\" onMouseOut=\"this.style.background=''\">"
+			"<tr onClick=\"location.href='getDividend.do?corp_code="+this.corp_code+"';\" style='cursor:pointer;'  onMouseOver=\"this.style.background='#fcc'\" onMouseOut=\"this.style.background=''\">"
 			+"<td align='center'>"+this.corp_code+"</td>"
 			+"<td align='center'>"+this.corp_name+"</td>"
-			+"<td align='center'>"+this.corp_type+"</td>"
-			+"<td align='center'>"+this.dividend_month+"</td>"
-			+"<td align='center'>"+this.dividend_money+"</td>"
-			+"<td align='center'>"+this.oneyearago+"</td>"
-			+"<td align='center'>"+this.twoyearago+"</td>"
-			+"<td align='center'>"+this.threeyearago+"</td>"
+			+"<td align='right'>"+this.corp_type+"</td>"
+			+"<td align='right'>"+this.dividend_month+"</td>"
+			+"<td align='right'>"+this.dividend_money+"</td>"
+			+"<td align='right'>"+this.oneyearago+"</td>"
+			+"<td align='right'>"+this.twoyearago+"</td>"
+			+"<td align='right'>"+this.threeyearago+"</td>"
 			+"</tr>"
 		);
 	});
 }
 
-function getDividend(code) {
+/* function getDividend(code) {
 	$(location).attr('href',"getDividend.do?corp_code="+code);
-}
+} */
 </script>
 </head>
 <body>
-	<!--
-	<center>
-	</center>
-	상세조회
-	페이징처리
-	-->
+<!--
+<center>
+</center>
+-->
 <%@ include file="./include/header.jsp" %>
-
+<table>
+	<tr>
+		<td>
+			<select name="searchCondition" class="searchCondition">
+					<c:forEach items="${conditionMap }" var="option">
+						<option value="${option.value }">${option.key }
+					</c:forEach>
+			</select> 
+			<input name="searchKeyword" class="searchKeyword" type="text" /> 
+			<input type="button" id="submit" value="검색" />
+		</td>
+	</tr>
+</table>
 <div id="container">
 	<table id="divi-data">
 	</table>
+	<button id="addBtn" onclick="moreList();">더보기</button>
 </div>
-	
-<%@ include file="./include/footer.jsp" %>
+<%@ include file="./include/footer.jsp"%>
 </body>
 </html>

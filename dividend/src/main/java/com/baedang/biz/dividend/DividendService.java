@@ -6,6 +6,9 @@ public interface DividendService {
 	//등록
 	//void insertDividend(DividendVO vo);
 	
+	//목록의 갯수 구하기
+	public int getListCount();
+	
 	//목록 조회
 	List<DividendVO> getDividendList(DividendVO vo);
 	

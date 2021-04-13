@@ -1,6 +1,8 @@
 package com.baedang.biz.dividend.impl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,11 +29,18 @@ public class DividendDAO {
 //		mybatis.delete("DividendDAOTemp.deleteDividend", vo);
 //	}
 	
+
+	//목록의 갯수 구하기
+	public int getListCount() {
+		return mybatis.selectOne("DividendDAOTemp.getListCount");
+	}
+	
 	public DividendVO getDividend(DividendVO vo) {
 		return mybatis.selectOne("DividendDAOTemp.getDividend", vo);
 	}
 	
 	public List<DividendVO> getDividendList(DividendVO vo) {
+		vo.setCount(vo.getCount());
 		//일반적인 리스트 출력
 		//return mybatis.selectList("DividendDAOTemp.getDividendList", vo);
 		if (vo.getSearchCondition().equals("CORP_NAME")) {

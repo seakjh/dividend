@@ -13,7 +13,12 @@ public class DividendServiceImpl implements DividendService {
 	
 	@Autowired
 	private DividendDAO dividendDAO;
-
+	
+	//목록의 갯수 구하기
+	public int getListCount() {
+		return dividendDAO.getListCount();
+	}
+	
 	@Override
 	public List<DividendVO> getDividendList(DividendVO vo) {
 		List<DividendVO> list = dividendDAO.getDividendList(vo);

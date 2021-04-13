@@ -21,27 +21,42 @@
 	]]>
 </delete>
   -->
+  
+<select id="getListCount" resultType="int">
+	<![CDATA[
+		select count(*) from dividend
+	]]>
+</select>
+
 <select id="getDividend" resultType="dividend" parameterType="dividend">
 	<![CDATA[
-		select * from dividend where corp_code = #{corp_code}
+		select corp_code, corp_name, corp_type, corp_status, to_char(dividend_month, 'yyyy/mm') as dividend_month, dividend_money, dividend_rate, oneyearago, twoyearago, threeyearago
+		from dividend 
+		where corp_code = #{corp_code}
 	]]>
 </select>
 
 <select id="getDividendList" resultType="dividend" parameterType="dividend">
 	<![CDATA[
-		select corp_code, corp_name, corp_type, corp_status, to_char(dividend_month, 'yyyy/mm') as dividend_month, dividend_money, dividend_rate, oneyearago, twoyearago, threeyearago
-		from dividend
+		select * from 
+		(select rownum rnum, corp_code, corp_name, corp_type, corp_status, 
+		to_char(dividend_month, 'yyyy/mm') as dividend_month, dividend_money, 
+		dividend_rate, oneyearago, twoyearago, threeyearago from
+		(select * from dividend order by dividend_money desc))
 		where corp_name like '%'||#{searchKeyword}||'%'
-		order by dividend_money desc
+		and rnum <= #{count}
 	]]>
 </select>
 
 <select id="getDividendList_C" resultType="dividend" parameterType="dividend">
 	<![CDATA[
-		select corp_code, corp_name, corp_type, corp_status, to_char(dividend_month, 'yyyy/mm') as dividend_month, dividend_money, dividend_rate, oneyearago, twoyearago, threeyearago
-		from dividend
+		select * from 
+		(select rownum rnum, corp_code, corp_name, corp_type, corp_status, 
+		to_char(dividend_month, 'yyyy/mm') as dividend_month, dividend_money, 
+		dividend_rate, oneyearago, twoyearago, threeyearago from
+		(select * from dividend order by dividend_money desc))
 		where corp_code like '%'||#{searchKeyword}||'%'
-		order by dividend_money desc
+		and rnum <= #{count}
 	]]>
 </select>
 

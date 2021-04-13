@@ -13,6 +13,7 @@ public class DividendVO {
 	private int threeyearago;
 	private String searchCondition;
 	private String searchKeyword;
+	private int count;
 	
 	public String getCorp_code() {
 		return corp_code;
@@ -85,6 +86,15 @@ public class DividendVO {
 	}
 	public void setSearchKeyword(String searchKeyword) {
 		this.searchKeyword = searchKeyword;
+	}
+	public int getCount() {
+		if (count == 0) {
+			count = 10;
+		}
+		return count;
+	}
+	public void setCount(int count) {
+		this.count = count;
 	}
 	
 //	public String toString() {
