@@ -9,4 +9,5 @@
 	<a href="logout.do">Log-out</a>
 	<a href="getBoardList.do">글 목록 바로가기</a>
 	<a href="calculate.do">복리계산기</a>
+	<a href="directions.do">찾아오시는 길</a>
 </header>

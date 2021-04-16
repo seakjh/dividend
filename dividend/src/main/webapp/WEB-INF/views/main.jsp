@@ -87,6 +87,7 @@ $(function() {
 });
 
 function moreList() {
+	var dataLength = $("#divi-data tr").length;
 	count = count+20;
 	console.log("count", count); 
 	
@@ -104,6 +105,9 @@ function moreList() {
 			}
 			else{
 				if(data.length > 0){
+					if (dataLength > data.length) {
+						alert("더 이상 불러올 데이터가 없습니다.")
+					}
 					getList(data);
 				}
 			}
