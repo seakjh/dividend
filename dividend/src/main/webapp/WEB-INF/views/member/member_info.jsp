@@ -121,7 +121,7 @@ function out(){
 		<td>
 			&nbsp;&nbsp;&nbsp;
 			<input type="text" name="MEMBER_NAME" 
-				size="20" value="${member.MEMBER_NAME }" />
+				size="20" value="${member.member_name }" />
 		</td>
 	</tr>
 	<tr>
@@ -129,7 +129,7 @@ function out(){
 			<font size="2">&nbsp;&nbsp;&nbsp;&nbsp;ID</font>
 		</td>
 		<td>
-			&nbsp;&nbsp;&nbsp;&nbsp;${member.MEMBER_ID }
+			&nbsp;&nbsp;&nbsp;&nbsp;${member.member_id }
 		</td>
 	</tr>
 	<tr>
@@ -162,8 +162,8 @@ function out(){
 			<font size="2">&nbsp;&nbsp;&nbsp;&nbsp;주민등록번호</font>
 		</td>
 		<td>
-			&nbsp;&nbsp;&nbsp;&nbsp;
-			${member.MEMBER_JUMIN1 } - ${member.MEMBER_JUMIN2}
+			&nbsp;&nbsp;&nbsp;&nbsp;<%-- 
+			${member.MEMBER_JUMIN1 } - ${member.MEMBER_JUMIN2} --%>
 		</td>
 	</tr>
 	<tr>
@@ -199,8 +199,8 @@ function out(){
 		</td>
 		<td>
 			&nbsp;&nbsp;&nbsp;
-			<input type="text" name="MEMBER_PHONE" size="24" 
-				value="${member.MEMBER_PHONE }" />
+	<%-- 		<input type="text" name="MEMBER_PHONE" size="24" 
+				value="${member.MEMBER_PHONE }" /> --%>
 		</td>
 	</tr>
 	<tr>
@@ -225,8 +225,8 @@ function out(){
 		</td>
 		<td>
 			&nbsp;&nbsp;&nbsp;
-			<input type="text" name="MEMBER_ADDR1" size="50" 
-				value="${member.MEMBER_ADDR1 }" />
+<%-- 			<input type="text" name="MEMBER_ADDR1" size="50" 
+				value="${member.MEMBER_ADDR1 }" /> --%>
 		</td>
 	</tr>
 	<tr>
@@ -235,8 +235,8 @@ function out(){
 		</td>
 		<td>
 			&nbsp;&nbsp;&nbsp;
-			<input type="text" name="MEMBER_ADDR2" size="50" 
-				value="${member.MEMBER_ADDR2 }" />
+<%-- 			<input type="text" name="MEMBER_ADDR2" size="50" 
+				value="${member.MEMBER_ADDR2 }" /> --%>
 		</td>
 	</tr>
 	<tr>
@@ -245,8 +245,8 @@ function out(){
 		</td>
 		<td>
 			&nbsp;&nbsp;&nbsp;
-			<input type="text" name="MEMBER_MOBILE" size="24" 
-				value="${member.MEMBER_MOBILE }" />
+<%-- 			<input type="text" name="MEMBER_MOBILE" size="24" 
+				value="${member.MEMBER_MOBILE }" /> --%>
 		</td>
 	</tr>
 </table>

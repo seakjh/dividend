@@ -8,6 +8,12 @@ create table member(	-- 한 회원에 대한 입력정보 테이블
 	member_role				varchar2(10)		default 'user'	--회원 구분 (일반회원, 관리자) (user,admin)
 );
 
+select * from member;
+
+insert into member(member_id, member_password, member_name, member_email, member_role) 
+values('admin', 'admin1234', '관리자', 'lynn778@naver.com', 'admin');
+insert into member(member_id, member_password, member_name, member_email) 
+values('apple', 'apple', '김사과', 'apple@apple.com');
 
 --배당정보
 create table dividend(		-- 한 기업에대한 배당정보
