@@ -10,10 +10,19 @@ create table member(	-- 한 회원에 대한 입력정보 테이블
 
 select * from member;
 
+select * from member
+where member_id = 'apple' and member_password = 'apple';
+
 insert into member(member_id, member_password, member_name, member_email, member_role) 
 values('admin', 'admin1234', '관리자', 'lynn778@naver.com', 'admin');
 insert into member(member_id, member_password, member_name, member_email) 
 values('apple', 'apple', '김사과', 'apple@apple.com');
+insert into member(member_id, member_password, member_name, member_email) 
+values('asdf', 'asdf', 'asdf', 'asdf@asdf.com');
+insert into member(member_id, member_password, member_name, member_email) 
+values('asdf1', 'asdf1', 'asdf1', 'asdf@asdf.com');
+insert into member(member_id, member_password, member_name, member_email) 
+values('asdf2', 'asdf2', 'asdf2', 'asdf@asdf.com');
 
 --배당정보
 create table dividend(		-- 한 기업에대한 배당정보

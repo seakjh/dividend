@@ -11,16 +11,10 @@ import com.baedang.view.common.exception.DataNotFoundException;
 @Repository
 public class MemberDAOImpl implements MemberDAO {
 	
-	@Autowired //(required = true)
+	@Autowired
 	private SqlSessionTemplate mybatis;
 	
-	// 회원가입
-//	@Override
-//	public void register(MemberVO vo) {
-//		mybatis.insert("memberMapper.register", vo);
-//	}
-	
-	// 01_01. 회원 로그인 체크
+	// 회원 로그인 체크
 	@Override
 	public MemberVO loginCheck(MemberVO vo) throws DataNotFoundException {
 		MemberVO member = mybatis.selectOne("memberMapper.loginCheck", vo);
@@ -30,39 +24,37 @@ public class MemberDAOImpl implements MemberDAO {
 		return member;
 	}
 
+	// 회원가입
 	@Override
 	public void register(MemberVO vo) throws Exception {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public boolean DeleteMember(int num) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean MemberModify(MemberVO boarddata) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public MemberVO viewMember(MemberVO vo) {
-		// TODO Auto-generated method stub
-		return null;
+		mybatis.insert("memberMapper.register", vo);
 	}
 	
-	// 01_02. 회원 로그인 정보
-//	@Override
-//	public MemberVO viewMember(MemberVO vo) {
-//		return mybatis.selectOne("memberMapper.viewMember", vo);
-//	}
+	// 아이디 중복확인
+	@Override
+	public int idChk(MemberVO vo) throws Exception {
+		return mybatis.selectOne("memberMapper.idChk", vo);
+	}
 	
-	//회원 탈퇴처리
-//	public void delete(int member_id) {
-//		mybatis.delete("Member.delete", member_id);
-//	}
+	//마이페이지 정보 수정
+	@Override
+	public void memberUpdate(MemberVO vo) throws Exception {	
+		mybatis.update("memberMapper.memberUpdate", vo); 
+	}
+
+	//회원 탈퇴
+	@Override
+	public void memberDelete(MemberVO vo) throws Exception {
+		// MemberVO에 담긴 값 전달 #{id}, #{password}
+		mybatis.delete("memberMapper.memberDelete", vo);
+	}
+
+	//패스워드 체크
+	@Override
+	public int passChk(MemberVO vo) throws Exception {
+		//쿼리에서 조회한 값과 파라미터를 보내주는 값이 int형
+		int result = mybatis.selectOne("memberMapper.passChk");
+		return result;
+	}
 	
 }

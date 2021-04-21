@@ -1,6 +1,6 @@
 package com.baedang.biz.member;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class MemberVO {
 	private String member_id;

@@ -12,6 +12,6 @@
 	<!-- Sql Mapper 설정 -->
 	<mappers>
 		<mapper resource="mappings/dividend-mapping.xml"/>
- 		<mapper resource="mappings/memberMapper.xml"/>
+ 		<mapper resource="mappings/member-Mapper.xml"/>
 	</mappers>
 </configuration>

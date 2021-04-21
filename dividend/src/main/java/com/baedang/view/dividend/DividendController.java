@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import com.baedang.biz.dividend.DividendService;
 import com.baedang.biz.dividend.DividendVO;
 
-
 @Controller
 @SessionAttributes("dividend") //모델에 저장할때 세션에도 자동으로 저장하라
 public class DividendController {

@@ -1,4 +1,4 @@
-package com.baedang.view.board;
+package com.baedang.view.main;
 
 import java.util.HashMap;
 import java.util.Map;

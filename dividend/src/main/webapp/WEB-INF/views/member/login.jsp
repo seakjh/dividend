@@ -56,7 +56,7 @@ var user_id = "<%=(String) session.getAttribute("user_id")%>";
 	</form>
 	<br />
 	<a href="">맨 처음 페이지로</a>&nbsp;&nbsp;&nbsp;&nbsp;
-	<a href="memRegister.do">회원가입</a>
+	<a href="join.do">회원가입</a>
 	<br />
 	<script>
 		} else {

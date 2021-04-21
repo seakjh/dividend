@@ -1,20 +1,23 @@
 package com.baedang.biz.member;
 
-import javax.servlet.http.HttpSession;
-
 public interface MemberDAO {
+	
+	// 회원 로그인 체크
+	public MemberVO loginCheck(MemberVO vo);
 	
 	// 회원가입
 	public void register(MemberVO vo) throws Exception;
 
-	public boolean DeleteMember(int num);
+	//아이디 중복 체크
+	public int idChk(MemberVO vo) throws Exception;
+	
+	//마이페이지 회원정보 수정
+	public void memberUpdate(MemberVO vo) throws Exception;
+	
+	//회원 탈퇴
+	public void memberDelete(MemberVO vo) throws Exception;
 
-	public boolean MemberModify(MemberVO boarddata);
-	
-	// 01_01. 회원 로그인 체크
-	public MemberVO loginCheck(MemberVO vo);
-	
-	// 01_02. 회원 로그인 정보
-	public MemberVO viewMember(MemberVO vo);
+	//패스워드 체크
+	public int passChk (MemberVO vo) throws Exception;
 	
 }

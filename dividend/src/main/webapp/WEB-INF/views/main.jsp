@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>배당의 민족</title>
+<title>배당탑닷컴</title>
 <style type="text/css">
 table {
 	border-collapse: collapse;
@@ -56,7 +56,8 @@ var count =0;
 $(function() {
 	moreList(); //함수 호출
 	
-/* 	$.ajax({
+/*
+	$.ajax({
 		contentType:"application/json",
 		dataType:"json",
 		url:"getDividendList.do",
@@ -64,23 +65,21 @@ $(function() {
 		success:function(data) {
 			getList(data);
 		}
-	}); */
+	}); 
+*/
 	
 	$('#submit').click(function() {
 		var searchCondition = $('.searchCondition').val();
 		var searchKeyword = $('.searchKeyword').val();
 		var sendData = 'searchCondition='+searchCondition+'&searchKeyword='+searchKeyword;
-		
 		$.post("getDividendList.do", sendData, function(data) {
 			if(data.length < 10){
 				$("#addBtn").remove();   // 더보기 버튼을 div 클래스로 줘야 할 수도 있음
 			}
 			getList(data);
 		});
-		
 		return false;
 	});
-	
 });
 
 function moreList() {
@@ -142,10 +141,6 @@ function getList(dividend) {
 		);
 	});
 }
-
-/* function getDividend(code) {
-	$(location).attr('href',"getDividend.do?corp_code="+code);
-} */
 </script>
 </head>
 <body>
