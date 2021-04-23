@@ -7,11 +7,13 @@
 	<typeAliases>
 		<typeAlias alias="dividend" type="com.baedang.biz.dividend.DividendVO"/>
 		<typeAlias alias="member" type="com.baedang.biz.member.MemberVO"/>
+		<typeAlias alias="cart" type="com.baedang.biz.cart.CartVO"/>
 	</typeAliases>
 	
 	<!-- Sql Mapper 설정 -->
 	<mappers>
 		<mapper resource="mappings/dividend-mapping.xml"/>
- 		<mapper resource="mappings/member-Mapper.xml"/>
+ 		<mapper resource="mappings/member-mapping.xml"/>
+ 		<mapper resource="mappings/cart-mapping.xml"/>
 	</mappers>
 </configuration>

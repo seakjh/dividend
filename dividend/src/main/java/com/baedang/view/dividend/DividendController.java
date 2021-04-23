@@ -61,7 +61,7 @@ public class DividendController {
 	public String getDividend(DividendVO vo, Model model) {
 		DividendVO dividend = dividendService.getDividend(vo);
 		model.addAttribute("dividend", dividend);
-		return "dividend/getDividend";		
+		return "dividend/getDividend";
 	}
 	
 }

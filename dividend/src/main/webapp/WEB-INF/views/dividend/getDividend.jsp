@@ -29,8 +29,8 @@ td:last-child {
 	 -->
 	<center>
 		<hr>
-		<form action="" method="post">
-			<input name="seq" type="hidden" value="${dividend.corp_code}" />
+		<form action="insertCart.do" method="post">
+			<input name="dividend.corp_code" type="hidden" value="${dividend.corp_code}" />
 			<table border="1" cellpadding="0" cellspacing="0">
 				<tr>
 					<td bgcolor="#fcc" width="200px">종목코드</td>
@@ -73,8 +73,9 @@ td:last-child {
 					<td align="left">${dividend.threeyearago }원</td>
 				</tr>
  				<tr>
-					<td colspan="2" align="center"><input type="submit"
-						value="관심종목 등록" /></td>
+					<td colspan="2" align="center">
+						<input type="submit" value="관심종목 등록" />
+					</td>
 				</tr>
 			</table>
 		</form>

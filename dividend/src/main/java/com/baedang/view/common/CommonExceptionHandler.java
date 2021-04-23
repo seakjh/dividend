@@ -11,7 +11,7 @@ public class CommonExceptionHandler {
 	public ModelAndView handleIllegalArgumentException(Exception e) {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("exception", e);
-		mav.setViewName("/common/arithmeticError.jsp");
+		mav.setViewName("/common/arithmeticError");
 		return mav;
 	}
 	
@@ -19,7 +19,7 @@ public class CommonExceptionHandler {
 	public ModelAndView handleNullPointerException(Exception e) {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("exception", e);
-		mav.setViewName("/common/nullPointerError.jsp");
+		mav.setViewName("/common/nullPointerError");
 		return mav;
 	}
 }

@@ -142,7 +142,110 @@ insert into dividend values('044340','위닉스','코스닥',23300 ,to_date('202
 insert into dividend values('040910','아이씨디','코스닥',16500 ,to_date('2020/12', 'yyyy/mm'),350 ,2.12,150,150,150);
 insert into dividend values('016250','SGC이테크건설','코스닥',55300 ,to_date('2020/12', 'yyyy/mm'),1172 ,2.12,1172,781,586);
 
+--
 
+insert into dividend values('017390', '서울가스', '코스피', 90500, to_date('2020/12', 'yyyy/mm'), 16750, 18.51, 1750, 1750, 1750);
+insert into dividend values('168490', '한국패러랠', '코스피', 1940, to_date('2020/12', 'yyyy/mm'), 235, 12.11, 165, 200, 205);
+insert into dividend values('003545', '대신증권우', '코스피', 14000, to_date('2020/12', 'yyyy/mm'), 1250, 8.93, 1050, 670, 660);
+insert into dividend values('003547', '대신증권2우B스', '코스피', 13700, to_date('2020/12', 'yyyy/mm'), 1200, 8.76, 1000, 620, 610);
+insert into dividend values('140910', '에이리츠', '코스피', 7870, to_date('2020/12', 'yyyy/mm'), 674, 8.57, 373, 277, 86);
+insert into dividend values('008110', '대동전자', '코스피', 6570, to_date('2020/12', 'yyyy/mm'), 500, 7.61, 0, 0, 0);
+insert into dividend values('005945', 'NH투자증권우', '코스피', 9980, to_date('2020/12', 'yyyy/mm'), 750, 7.51, 550, 550, 550);
+insert into dividend values('000700', '유수홀딩스', '코스피', 6850, to_date('2020/12', 'yyyy/mm'), 500, 7.3, 0, 0, 0);
+insert into dividend values('003540', '대신증권', '코스피', 16800, to_date('2020/12', 'yyyy/mm'), 1200, 7.14, 1000, 620, 610);
+insert into dividend values('282690', '동아타이어', '코스피', 11350, to_date('2020/12', 'yyyy/mm'), 800, 7.05, 500, 300, 0);
+insert into dividend values('008560', '메리츠증권', '코스피', 4610, to_date('2020/12', 'yyyy/mm'), 320, 6.94, 200, 200, 200);
+insert into dividend values('000060', '메리츠화재', '코스피', 18650, to_date('2020/12', 'yyyy/mm'), 1280, 6.86, 850, 820, 1140);
+insert into dividend values('005960', '동부건설', '코스피', 13650, to_date('2020/12', 'yyyy/mm'), 900, 6.59, 700, 300, 0);
+insert into dividend values('007340', '디티알오토모티브', '코스피', 30600, to_date('2020/12', 'yyyy/mm'), 2000, 6.54, 1500, 1000, 700);
+insert into dividend values('122900', '아이마켓코리아', '코스피', 9280, to_date('2020/12', 'yyyy/mm'), 600, 6.47, 600, 450, 350);
+insert into dividend values('088980', '맥쿼리인프라', '코스피', 11800, to_date('2020/12', 'yyyy/mm'), 719, 6.09, 698, 621, 249);
+insert into dividend values('033780', 'KT&G', '코스피', 81200, to_date('2020/12', 'yyyy/mm'), 4800, 5.91, 4400, 4000, 4000);
+insert into dividend values('001275', '부국증권우', '코스피', 21150, to_date('2020/12', 'yyyy/mm'), 1250, 5.91, 1250, 1250, 1250);
+insert into dividend values('078935', 'GS우', '코스피', 33000, to_date('2020/12', 'yyyy/mm'), 1950, 5.91, 1950, 1950, 1850);
+insert into dividend values('000815', '삼성화재우', '코스피', 150000, to_date('2020/12', 'yyyy/mm'), 8805, 5.87, 8505, 11505, 10005);
+insert into dividend values('100250', '진양홀딩스', '코스피', 2910, to_date('2020/12', 'yyyy/mm'), 170, 5.84, 170, 150, 140);
+insert into dividend values('015360', '예스코홀딩스', '코스피', 34250, to_date('2020/12', 'yyyy/mm'), 2000, 5.84, 1750, 1500, 1500);
+insert into dividend values('003410', '쌍용C&E', '코스피', 7610, to_date('2020/12', 'yyyy/mm'), 440, 5.78, 420, 370, 214);
+insert into dividend values('004800', '효성', '코스피', 86600, to_date('2020/12', 'yyyy/mm'), 5000, 5.77, 5000, 5000, 5000);
+insert into dividend values('094800', '맵스리얼티1', '코스피', 4360, to_date('2020/12', 'yyyy/mm'), 250, 5.73, 247, 212, 226);
+insert into dividend values('005940', 'NH투자증권', '코스피', 12250, to_date('2020/12', 'yyyy/mm'), 700, 5.71, 500, 500, 500);
+insert into dividend values('001750', '한양증권', '코스피', 13150, to_date('2020/12', 'yyyy/mm'), 750, 5.7, 350, 250, 350);
+insert into dividend values('175330', 'JB금융지주', '코스피', 6600, to_date('2020/12', 'yyyy/mm'),374 , 5.67, 300, 180, 100);
+insert into dividend values('138040', '메리츠금융지주', '코스피', 16000, to_date('2020/12', 'yyyy/mm'), 900, 5.62, 550, 470, 520);
+insert into dividend values('002960', '한국쉘석유', '코스피', 254000, to_date('2020/12', 'yyyy/mm'), 14000, 5.51, 16000, 19000, 17000);
+insert into dividend values('030610', '교보증권', '코스피', 8410, to_date('2020/12', 'yyyy/mm'), 450, 5.35, 400, 350, 300);
+insert into dividend values('003690', '코리안리', '코스피', 8480, to_date('2020/12', 'yyyy/mm'), 450, 5.31, 500, 275, 300);
+insert into dividend values('007590', '동방아그로', '코스피', 7010, to_date('2020/12', 'yyyy/mm'), 370, 5.28, 250, 250, 250);
+insert into dividend values('029780', '삼성카드', '코스피', 34150, to_date('2020/12', 'yyyy/mm'), 1800, 5.27, 1600, 1600, 1500);
+insert into dividend values('016360', '삼성증권', '코스피', 41800, to_date('2020/12', 'yyyy/mm'), 2200, 5.26, 1700, 1400, 1000);
+insert into dividend values('000155', '두산우', '코스피', 39600, to_date('2020/12', 'yyyy/mm'), 2050, 5.18, 5250, 5250, 5150);
+insert into dividend values('00088K', '한화3우B', '코스피', 14500, to_date('2020/12', 'yyyy/mm'), 750, 5.17, 750, 595, 646);
+insert into dividend values('024110', '기업은행', '코스피', 9160, to_date('2020/12', 'yyyy/mm'), 471, 5.14, 670, 690, 617);
+insert into dividend values('015760', '한국전력', '코스피', 23850, to_date('2020/12', 'yyyy/mm'), 1216, 5.1, 0, 0, 790);
+insert into dividend values('002460', '화성산업', '코스피', 12750, to_date('2020/12', 'yyyy/mm'), 650, 5.1, 500, 930, 890);
+insert into dividend values('002990', '금호산업', '코스피', 9890, to_date('2020/12', 'yyyy/mm'), 500, 5.06, 500, 500, 500);
+insert into dividend values('035000', '지투알', '코스피', 6040, to_date('2020/12', 'yyyy/mm'), 300, 4.97, 300, 250, 250);
+insert into dividend values('000480', ' 조선내화', '코스피', 85,000 ,to_date('2020/45', 'yyyy/mm'), 4200, 4.94, 4000, 4000, 3500);
+insert into dividend values('001500', '현대차증권', '코스피',	13,700, to_date('2020/12', 'yyyy/mm'),	675, 4.93, 600, 450, 400);
+insert into dividend values('017940', 'E1', '코스피', 44,700, to_date('2020/12', 'yyyy/mm'), 2200,4.92,2200,2000,2000);
+insert into dividend values('092230', 'KPX홀딩스', '코스피', 63,000, to_date('2020/12', 'yyyy/mm'),	3100, 4.92, 2600, 2600, 3850	);
+insert into dividend values('078930', 'GS', '코스피', 39,050	, to_date('2020/12', 'yyyy/mm'),1900, 4.87, 1900, 1900, 1800);
+insert into dividend values('001270', '부국증권', '코스피', 24,750, to_date('2020/12', 'yyyy/mm'),1200, 4.85	, 1200, 1200,1200);
+insert into dividend values('030200', 'KT', '코스피', 27,900, to_date('2020/12', 'yyyy/mm'), 1350, 4.84, 1100, 1100, 1000);
+insert into dividend values('060980', '한라홀딩스	', '코스피', 41,350, to_date('2020/12', 'yyyy/mm'), 2000, 4.84, 2000, 2000, 1350);
+insert into dividend values('082640', '동양생명', '코스피', 4,560, to_date('2020/12', 'yyyy/mm'), 220, 4.82, 230, 100, 360);
+insert into dividend values('019440', '세아특수강', '코스피', 14,600, to_date('2020/12', 'yyyy/mm'), 700,	4.8, 900, 900, 750);
+insert into dividend values('213500', '한솔제지', '코스피', 14,650, to_date('2020/12', 'yyyy/mm'), 700, 4.78, 600, 600, 600);
+insert into dividend values('152550', '한국ANKOR유전', '코스피', 1,675, to_date('2020/12', 'yyyy/mm'), 80, 4.78, 185, 215, 265);
+insert into dividend values('005830', 'DB손해보험', '코스피', 46,250, to_date('2020/12', 'yyyy/mm'), 2200, 4.76, 1500,	2000 ,2300);
+insert into dividend values('005190', '동성화학', '코스피', 17,900, to_date('2020/12', 'yyyy/mm'), 850, 4.75, 600, 500, 300);
+insert into dividend values('139130', 'DGB금융지주', '코스피', 8,220, to_date('2020/12', 'yyyy/mm'), 390, 4.74, 410, 360, 340);
+insert into dividend values('138930', 'BNK금융지주', '코스피', 6,760, to_date('2020/12', 'yyyy/mm'), 320, 4.73, 360, 300, 230);
+insert into dividend values('034590', '인천도시가스', '코스피', 26,500	, to_date('2020/12', 'yyyy/mm'), 1250, 4.72, 1250, 1250, 1250);
+insert into dividend values('000810', '삼성화재', '코스피', 189,500, to_date('2020/12', 'yyyy/mm'), 8800, 4.64, 8500, 11500, 10000);
+insert into dividend values('117580', '대성에너지	', '코스피', 5,540, to_date('2020/12', 'yyyy/mm'),	250, 4.51, 250, 250	, 250);
+insert into dividend values('001725', '신영증권우	', '코스피', 56,600, to_date('2020/12', 'yyyy/mm'), 2550, 4.51, 2800,	2800, 2500);
+insert into dividend values('123890', '한국자산신탁', '코스피', 4,890, to_date('2020/12', 'yyyy/mm'), 220, 4.5	, 182, 166, 151);
+insert into dividend values('016610', 'DB금융투자', '코스피', 6,680, to_date('2020/12', 'yyyy/mm'),	300, 4.49, 250, 250	, 100);
+insert into dividend values('004970', '신라교역', '코스피', 11,150, to_date('2020/12', 'yyyy/mm'), 500, 4.48, 500, 500, 500);
+insert into dividend values('069260', '휴켐스', '코스피', 22,450, to_date('2020/12', 'yyyy/mm'), 1000, 4.45, 1000, 1200	, 1500);
+insert into dividend values('000650', '천일고속', '코스피', 67,500, to_date('2020/12', 'yyyy/mm'), 3000, 4.44, 5000, 6000, 15300);
+insert into dividend values('003465', '유화증권우	', '코스피', 2,700, to_date('2020/12', 'yyyy/mm'), 120, 4.44,	 130, 160	, 130);
+insert into dividend values('086790', '하나금융지주', '코스피', 41,650	, to_date('2020/12', 'yyyy/mm'), 1850, 4.44, 2100, 1900, 1550);
+insert into dividend values('100840', 'SNT에너지	', '코스피', 18,300, to_date('2020/12', 'yyyy/mm'), 800, 4.37, 800, 0, 0);
+insert into dividend values('071055', '한국금융지주우', '코스피', 70,100, to_date('2020/12', 'yyyy/mm'), 3062, 4.37, 2962, 1862,	1662);
+insert into dividend values('001720', '신영증권', '코스피', 57,500, to_date('2020/12', 'yyyy/mm'), 2500, 4.35	,2750, 2750, 2450);
+insert into dividend values('267290', '경동도시가스', '코스피', 20,150	, to_date('2020/12', 'yyyy/mm'), 875, 4.34, 875, 700, 600);
+insert into dividend values('004255', 'NPC우', '코스피', 2,435, to_date('2020/12', 'yyyy/mm'), 105,	4.31, 105, 100, 95);
+insert into dividend values('095570', 'AJ네트웍스	', '코스피', 4,870, to_date('2020/12', 'yyyy/mm'), 210, 4.31,	300, 100,	86);
+insert into dividend values('102260', '동성코퍼레이션', '코스피', 5,850, to_date('2020/12', 'yyyy/mm'), 250, 4.27, 200,	200, 200);
+insert into dividend values('001450', '현대해상', '코스피', 23,450, to_date('2020/12', 'yyyy/mm'), 1000, 4.26, 880, 1130, 1500);
+insert into dividend values('00680K', '미래에셋증권2우B', '코스피', 4,725, to_date('2020/12', 'yyyy/mm'), 200, 4.23, 260, 220, 0);
+insert into dividend values('008060', '대덕', '코스피', 7,100	, to_date('2020/12', 'yyyy/mm'), 300, 4.22, 300, 300, 300);
+insert into dividend values('204210', '모두투어리츠', '코스피', 3,565, to_date('2020/12', 'yyyy/mm'), 150, 4.21, 168, 82, 76);
+insert into dividend values('025000', 'KPX케미칼	', '코스피', 65,700, to_date('2020/12', 'yyyy/mm'), 2750, 4.19, 2500, 2000, 2000);
+insert into dividend values('001800', '오리온홀딩스', '코스피', 15,700	, to_date('2020/12', 'yyyy/mm'), 650, 4.14, 650, 650, 600);
+insert into dividend values('078000', '텔코웨어', '코스피', 11,650, to_date('2020/12', 'yyyy/mm'), 480, 4.12, 550, 650, 580);
+insert into dividend values('005305', '롯데칠성우	', '코스피', 66,100, to_date('2020/12', 'yyyy/mm'), 2705, 4.09, 2705, 2705, 3305);
+insert into dividend values('011785', '금호석유우	', '코스피', 105,000, to_date('2020/12', 'yyyy/mm'), 4250, 4.05, 1550, 1400, 1050);
+insert into dividend values('130660', '한전산업', '코스피', 5,150, to_date('2020/12', 'yyyy/mm'), 208, 4.04, 227, 169, 198);
+insert into dividend values('000150', '두산', '코스피', 49,700, to_date('2020/12', 'yyyy/mm'), 2000, 4.02, 5200, 5200, 5100);
+insert into dividend values('010770', '평화홀딩스	', '코스피', 3,735, to_date('2020/12', 'yyyy/mm'), 150, 4.02, 150, 150, 150);
+insert into dividend values('055550', '신한지주', '코스피', 37,400, to_date('2020/12', 'yyyy/mm'), 1500, 4.01,	 1850, 1600, 1450);
+insert into dividend values('003460', '유화증권', '코스피', 2,745, to_date('2020/12', 'yyyy/mm'), 110, 4.01, 120, 150, 120);
+insert into dividend values('003570', 'SNT중공업	', '코스피', 7,520, to_date('2020/12', 'yyyy/mm'), 300, 3.99,	 300, 195	,0);
+insert into dividend values('003300', '한일홀딩스	', '코스피', 12,800, to_date('2020/12', 'yyyy/mm'), 510, 3.98, 460, 440, 360);
+insert into dividend values('005935', '삼성전자우	', '코스피', 75,200, to_date('2020/12', 'yyyy/mm'), 2995, 3.98, 1417, 1417, 851);
+insert into dividend values('053210', '스카이라이프', '코스피', 8,880, to_date('2020/12', 'yyyy/mm'), 350, 3.94, 350, 350, 350);
+insert into dividend values('023150', 'MH에탄올', '코스피',	8,890, to_date('2020/12', 'yyyy/mm'), 350, 3.94, 350, 350, 350);
+insert into dividend values('000087', '하이트진로2우B', '코스피', 20,350, to_date('2020/12', 'yyyy/mm'), 800, 3.93, 750, 850, 850);
+insert into dividend values('344820', '케이씨씨글라스', '코스피', 53,600, to_date('2020/12', 'yyyy/mm'), 2100, 3.92, 0, 0, 0);
+insert into dividend values('019685', '대교우B', '코스피', 2,825, to_date('2020/12', 'yyyy/mm'), 110, 3.89, 180, 220, 250);
+insert into dividend values('039570', 'HDC아이콘트롤스', '코스피', 10,300, to_date('2020/12', 'yyyy/mm'), 400, 3.88, 350, 350, 250);
+
+
+--
 
 ------------------------------------------------------------
 select * from dividend order by dividend_money desc;
@@ -153,15 +256,23 @@ select corp_code, corp_name, corp_type, corp_status, to_char(dividend_month, 'yy
 from dividend
 order by dividend_money desc;
 
-
 drop table dividend purge;
+
 --------------------------------------------------------------------------------
 --관심종목
 create table cart(
-	cart_seq		number		primary key,	-- 관심종목에 대한 번호
-	member_id		varchar2(20)		-- 관심종목에대한 회원아이디
-	corp_num	number				-- 기업 법인번호
+	cart_seq			number			primary key,	-- 관심종목에 대한 번호
+	member_id		varchar2(20)	,					-- 관심종목에대한 회원아이디
+	corp_code			varchar2(10)							-- 기업 법인번호
 );
+
+select * from cart;
+
+insert into cart(cart_seq, member_id, corp_code) 
+values((select nvl(max(cart_seq), 0)+1 from cart), 'asdf', '039570')
+
+delete from cart;
+
 
 --게시판
 create table freeboard(

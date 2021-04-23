@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="memberMapper">
+
+<select id="loginCheck" resultType="member">
+	select * from member
+	where member_id = #{member_id} and member_password = #{member_password}
+</select>
+
+<!-- 회원가입 -->
+<insert id="register" parameterType="member">
+    insert into member(member_id, member_password, member_name, member_email) 
+    values(#{member_id}, #{member_password}, #{member_name}, #{member_email})
+</insert>
+
+<!-- 아이디 중복 체크 // 아이디가 있으면 COUNT가 1 없으면 0-->
+<select id="idChk" resultType="int">
+	select count(*) from member
+	where member_id = #{member_id}
+</select>
+
+<!-- 마이페이지 : 회원정보 수정 -->
+<update id="memberUpdate" parameterType="member">
+	update member 
+	set	member_name=#{member_name},
+			member_email=#{member_email}
+	where member_id=#{member_id} 
+</update>
+
+<!-- 회원탈퇴 -->
+<delete id="memberDelete" parameterType="member">
+	delete from member
+	where member_id=#{member_id} 
+</delete>
+
+<!-- 회원탈퇴 : 비밀번호 체크 // 사용안함.-->
+<select id="passChk" resultType="int">
+	select count(*) from member
+	where member_id=#{member_id} and member_password=#{member_password}   
+</select>
+<!-- 아이디, 비밀번호가 맞으면 값1 -->
+
+</mapper>

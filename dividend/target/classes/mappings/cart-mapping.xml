@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cartMapper">
+
+<!-- 내 관심종목 등록 -->
+<insert id="insertCart" parameterType="cart">
+    insert into cart(cart_seq, member_id, corp_code) 
+    values((select nvl(max(cart_seq), 0)+1 from cart), #{member.member_id}, #{dividend.corp_code})
+</insert>
+
+</mapper>
