@@ -12,7 +12,9 @@
 	<%} else { %>
 	<a href="mypage.do">마이페이지</a>
 	<a href="logout.do">Log-out</a>
+	<a href="getCartList.do">나의 관심종목</a>
 	<%} %>
+	<a href="getDividendMain.do">배당종목</a>
 	<a href="getBoardList.do">자유게시판</a>
 	<a href="calculate.do">복리계산기</a>
 	<a href="directions.do">찾아오시는 길</a>

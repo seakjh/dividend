@@ -95,7 +95,7 @@ public class MemberController {
 	public String registerUpdate(@ModelAttribute("member") MemberVO vo, HttpSession session, Model model) throws Exception{
 		memberService.memberUpdate(vo);
 		session.invalidate();
-		model.addAttribute("msg", "로그아웃 처리되었습니다");
+		model.addAttribute("msg", "정보수정 되었습니다");
 		model.addAttribute("url", "/app");
 		return "result/message";
 	}

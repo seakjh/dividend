@@ -1,12 +1,15 @@
 package com.baedang.view.dividend;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,6 +25,11 @@ public class DividendController {
 	
 	@Autowired
 	private DividendService dividendService;
+	
+	@RequestMapping(value="/getDividendMain.do")
+	public String getDividendMain() throws Exception {
+		return "dividend/main";
+	}
 	
 	//메인페이지 로딩과 동시에 ajax로 목록을 출력
 	@RequestMapping(value="/getDividendList.do", method = RequestMethod.GET)
@@ -62,6 +70,14 @@ public class DividendController {
 		DividendVO dividend = dividendService.getDividend(vo);
 		model.addAttribute("dividend", dividend);
 		return "dividend/getDividend";
+	}
+	
+	@ModelAttribute("conditionMap") //스태틱방식 필요할때 갖다쓰기
+	public Map<String, String> searchConditionMap() {
+		Map<String, String> conditionMap = new HashMap<String, String>();
+		conditionMap.put("종목명", "CORP_NAME");
+		conditionMap.put("종목코드", "CORP_CODE");
+		return conditionMap;
 	}
 	
 }

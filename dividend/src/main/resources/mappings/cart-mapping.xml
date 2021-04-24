@@ -4,10 +4,88 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cartMapper">
 
+<resultMap type="cart" id="joinMap">
+	<id column="cart_seq" property="cart_seq"/>
+	<association column="member_id" property="member" javaType="member" select="memberMapper.loginCheck"/>
+	<association column="corp_code" property="dividend" javaType="dividend" select="DividendDAOTemp.getDividend"/>
+</resultMap>
+
 <!-- 내 관심종목 등록 -->
 <insert id="insertCart" parameterType="cart">
     insert into cart(cart_seq, member_id, corp_code) 
     values((select nvl(max(cart_seq), 0)+1 from cart), #{member.member_id}, #{dividend.corp_code})
 </insert>
+
+<!-- 관심 목록 -->
+<select id="listCart" resultType="cart" parameterType="cart" resultMap="joinMap">
+SELECT
+    c.cart_seq AS cart_seq, 
+    c.member_id AS member_id,
+    d.corp_code As corp_code,
+    m.member_name AS member_name, 
+    d.corp_name AS corp_name,
+    d.corp_type, 
+    d.corp_status,
+    to_char(d.dividend_month, 'yyyy/mm') as dividend_month, 
+    d.dividend_money, 
+    d.dividend_rate, 
+    d.oneyearago, 
+    d.twoyearago, 
+    d.threeyearago
+FROM
+	member m, dividend d, cart c
+WHERE m.member_id = c.member_id
+    AND d.corp_code = c.corp_code
+    AND c.member_id = #{member.member_id}
+ORDER BY
+    c.cart_seq
+</select>
+
+<select id="getCart" resultType="cart" parameterType="cart" resultMap="joinMap">
+	<![CDATA[
+		select 
+		    c.cart_seq AS cart_seq, 
+		    c.member_id AS member_id,
+		    d.corp_code As corp_code,
+		    m.member_name AS member_name, 
+		    d.corp_name AS corp_name,
+		    d.corp_type, 
+		    d.corp_status,
+		    to_char(d.dividend_month, 'yyyy/mm') as dividend_month, 
+		    d.dividend_money, 
+		    d.dividend_rate, 
+		    d.oneyearago, 
+		    d.twoyearago, 
+		    d.threeyearago
+		FROM
+			member m, dividend d, cart c
+		WHERE m.member_id = c.member_id
+		    AND d.corp_code = c.corp_code
+		    AND c.member_id = #{member.member_id}
+		    and cart_seq = #{cart_seq}
+	]]>
+</select>
+
+<!-- 관심목록 삭제 -->
+<delete id="deleteCart">
+    DELETE FROM cart 
+    WHERE cart_seq = #{cart_seq}
+</delete>
+
+<!--동일한 종목 레코드 확인 -->
+<select id="countCart" resultType="int" parameterType="cart">
+    SELECT COUNT(*)
+    FROM cart
+    WHERE member_id= #{member.member_id} 
+    AND corp_code = #{dividend.corp_code}
+</select>
+
+<!--동일한 종목이 존재하면 수정 -->
+<update id="updateCart">
+    UPDATE cart 
+    SET member_id= #{member.member_id}, corp_code = #{dividend.corp_code}
+    WHERE member_id= #{member.member_id} 
+    AND corp_code = #{dividend.corp_code}
+</update>
 
 </mapper>

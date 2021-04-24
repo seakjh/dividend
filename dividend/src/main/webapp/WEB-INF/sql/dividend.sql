@@ -268,10 +268,34 @@ create table cart(
 
 select * from cart;
 
+DELETE FROM cart 
+WHERE cart_seq = 3
+
 insert into cart(cart_seq, member_id, corp_code) 
 values((select nvl(max(cart_seq), 0)+1 from cart), 'asdf', '039570')
 
-delete from cart;
+SELECT
+    c.cart_seq AS cart_seq, 
+    c.member_id AS member_id,
+    d.corp_code As corp_code,
+    m.member_name AS member_name, 
+    d.corp_name AS corp_name,
+    d.corp_type, 
+    d.corp_status,
+    to_char(d.dividend_month, 'yyyy/mm') as dividend_month, 
+    d.dividend_money, 
+    d.dividend_rate, 
+    d.oneyearago, 
+    d.twoyearago, 
+    d.threeyearago
+FROM
+    member m, dividend d, cart c
+WHERE m.member_id = c.member_id
+    AND d.corp_code = c.corp_code
+    AND c.member_id = 'apple'
+ORDER BY
+    c.cart_seq
+
 
 
 --게시판
@@ -288,9 +312,9 @@ create table freeboard(
 );
 
 create table reple (
-	re_seq		number primary key	-- 댓글번호
-	frboard_seq	number forgin key		-- 댓글이 달린 게시글을 확인하기위한 
-	member_id	varchar2(20)		-- 댓글을 단 회원의 아이디
-	re_ref		varchar2(2000)		-- 댓글 내용
+	re_seq		number primary key,	-- 댓글번호
+	frboard_seq	number,		-- 댓글이 달린 게시글을 확인하기위한 
+	member_id	varchar2(20),		-- 댓글을 단 회원의 아이디
+	re_ref		varchar2(2000)	,	-- 댓글 내용
 	re_regdate	date default sysdate	-- 댓글 작성일자
 );
