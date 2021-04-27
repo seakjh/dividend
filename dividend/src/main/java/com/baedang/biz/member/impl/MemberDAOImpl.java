@@ -57,4 +57,35 @@ public class MemberDAOImpl implements MemberDAO {
 		return result;
 	}
 	
+	////////////////////
+	
+	//비밀번호 변경
+	@Override
+	public void memberChangePw(MemberVO vo) throws Exception {
+		mybatis.update("memberMapper.memberChangePw",vo);
+			
+	}
+
+	//비밀번호변경
+	@Override
+	public int updatePw(MemberVO vo) throws Exception {
+		return mybatis.update("memberMapper.updatePw");
+	}
+
+	//아이디 찾기
+	@Override
+	public String findID(String member_email) throws Exception {
+		return mybatis.selectOne("memberMapper.findID", member_email);
+	}
+
+	@Override
+	public int update_pw(MemberVO vo) throws Exception {
+		return mybatis.update("memberMapper.findPW", vo);
+	}
+
+	@Override
+	public String findEmail(String member_id) throws Exception {
+		return mybatis.selectOne("memberMapper.findEmail", member_id);
+	}
+
 }

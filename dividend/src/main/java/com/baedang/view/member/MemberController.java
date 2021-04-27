@@ -18,7 +18,7 @@ import com.baedang.biz.member.MemberService;
 import com.baedang.biz.member.MemberVO;
 
 @Controller
-@SessionAttributes("member")
+//@SessionAttributes("member")
 public class MemberController {
 	
 	@Autowired
@@ -39,8 +39,8 @@ public class MemberController {
 	//마이페이지
 	@RequestMapping(value="/mypage.do", method = RequestMethod.GET)
 	public String myPageView(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		return "member/myPage";
-	}
+		return "member/myPage_index";
+	}	
 	
 	//회원 탈퇴 get
 	@RequestMapping(value="memberDelete.do", method=RequestMethod.GET)
@@ -53,10 +53,11 @@ public class MemberController {
 	public String loginCheck(MemberVO vo, HttpServletRequest request) {
 		MemberVO member = memberService.loginCheck(vo);
 		HttpSession session = request.getSession();
-		
 		if (member == null) {
 			return "login";
 		}
+		System.out.println("msg >>" + member.getMember_name());
+		System.out.println("msg >>" + member);
 		
 		session.setAttribute("member", member);
 		session.setAttribute("member_id", member.getMember_id());
@@ -68,6 +69,7 @@ public class MemberController {
 	public String logout(Model model, HttpServletRequest request){
 		HttpSession session = request.getSession();
 		session.setAttribute("member_id", null);
+		session.setAttribute("member", null);
 		session.invalidate();//현재 클라이언트와 관련된 세션을 무효화
 		model.addAttribute("msg", "로그아웃 처리되었습니다");
 		model.addAttribute("url", "/app");
@@ -120,6 +122,7 @@ public class MemberController {
 		else {
 			memberService.memberDelete(vo);
 			session.setAttribute("member_id", null);
+			session.setAttribute("member", null);
 			session.invalidate();//현재 클라이언트와 관련된 세션을 무효화
 			model.addAttribute("msg", "탈퇴하였습니다."); //jsp로 전달.
 			model.addAttribute("url", "/app"); //jsp로 전달.
@@ -127,13 +130,32 @@ public class MemberController {
 		}
  	}
 	
-	//패스워드 체크  //아직 테스트 못해봤다아...(다른 방식으로 구현함)
-	@RequestMapping(value="/passChk", method=RequestMethod.POST)
-	@ResponseBody
-	public int passChk(MemberVO vo) throws Exception {
-		System.out.println("회원탈퇴 비밀번호 체크");
+	// 회원정보 변경
+	@RequestMapping(value = "/mypageChange.do", method = RequestMethod.GET)
+	public String myPageViewChange(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		return "member/myPage";
+	}
+
+	//비밀번호 변경
+	@RequestMapping(value = "/memberChangePw.do", method = RequestMethod.GET)
+	public String memberChangePwGet(MemberVO vo, HttpSession session, RedirectAttributes rttr) throws Exception {
+		return "member/myPage_change_pw";
+	}
+	
+	//비밀번호 변경
+	@RequestMapping(value="/memberChangePw.do", method=RequestMethod.POST)
+	public String memberChangePw(@ModelAttribute("member") MemberVO vo, HttpServletRequest request, Model model) throws Exception{
+		System.out.println("비밀번호 변경 컨트롤러");
+		HttpSession session = request.getSession();
+		//MemberVO member = (MemberVO) session.getAttribute("member");
 		
-		int result = memberService.passChk(vo);
-		return result;
+		System.out.println("db접근전");
+		memberService.memberChangePw(vo);
+		System.out.println("db접근후");
+		session.invalidate(); 
+					
+		model.addAttribute("msg", "비밀번호가 변경되었습니다. 다시 로그인 해주세요.");
+		model.addAttribute("url", "/app");
+		return "result/message";  
 	}
 }

@@ -16,4 +16,14 @@ public class UtilController {
 		return "util/calculate";
 	}
 	
+	@RequestMapping(value="rate_table.do", method = RequestMethod.GET)
+	public String rate_table(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		return "util/rate_table";
+	}
+	
+	@RequestMapping(value="rate_table2.do", method = RequestMethod.GET)
+	public String rate_table2(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		return "util/rate_table2";
+	}
+	
 }

@@ -1,36 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>배당탑닷컴</title>
-<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes" />
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./resources/css/main.css" />
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script type="text/javascript" src="./resources/js/jquery.waypoints.min.js"></script>
+    <meta charset="utf-8" />
+    <title>Insert title here</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery.waypoints.min.js"></script>
 
-<style type="text/css">
-a {
-	text-decoration: none;
-}
-a:hover {
-}
-footer {
-	clear: both;
-}
-</style>
-<%@ include file="./include/head.jsp"%>
 </head>
 <body>
-<!--
-<center>
-</center>
--->
-<%@ include file="./include/header.jsp" %>
 <div class="p-top__hero">
-    <div class="p-top__hero-inner"><img class="p-top__hero-mark" src="./resources/images/logo.jpg" alt="">
+    <div class="p-top__hero-inner"><img class="p-top__hero-mark" src="images/logo.jpg" alt="">
         <h2 class="p-top__hero-lead">배당에 대한 모든 것!<br />배당탑닷컴에서 만나보세요! </h2>
     </div>
     <div class="p-top__hero-scroll">SCROLL DOWN</div>
@@ -38,7 +20,7 @@ footer {
 <section class="p-top__points" id="service">
     <ol class="p-top__points-list">
         <li class="p-top__points-item">
-            <figure class="p-top__points-figure"><img class="p-top__points-image" src="./resources/images/image_point_01.png" alt="배당탑 소개"></figure>
+            <figure class="p-top__points-figure"><img class="p-top__points-image" src="images/image_point_01.png" alt="배당탑 소개"></figure>
             <div class="p-top__points-body">
                 <p class="p-top__points-number"><span class="p-top__points-number--sm">POINT</span>01</p>
                 <h4 class="p-top__points-title"><span><span><span>배당탑 소개</span></span></span></h4>
@@ -46,7 +28,7 @@ footer {
             </div>
         </li>
         <li class="p-top__points-item">
-            <figure class="p-top__points-figure"><img class="p-top__points-image" src="./resources/images/image_point_02.png" alt="진화하는 분석"></figure>
+            <figure class="p-top__points-figure"><img class="p-top__points-image" src="images/image_point_02.png" alt="진화하는 분석"></figure>
             <div class="p-top__points-body">
                 <p class="p-top__points-number"><span class="p-top__points-number--sm">POINT</span>02</p>
                 <h4 class="p-top__points-title"><span><span><span>진화하는 분석</span></span></span></h4>
@@ -54,7 +36,7 @@ footer {
             </div>
         </li>
         <li class="p-top__points-item">
-            <figure class="p-top__points-figure"><img class="p-top__points-image" src="./resources/images/image_point_03.png" alt="손쉬운 사용"></figure>
+            <figure class="p-top__points-figure"><img class="p-top__points-image" src="images/image_point_03.png" alt="손쉬운 사용"></figure>
             <div class="p-top__points-body">
                 <p class="p-top__points-number"><span class="p-top__points-number--sm">POINT</span>03</p>
                 <h4 class="p-top__points-title"><span><span><span>손쉬운 사용</span></span></span></h4>
@@ -90,6 +72,5 @@ footer {
         });
     });
 </script>
-<%@ include file="./include/footer.jsp"%>
 </body>
 </html>

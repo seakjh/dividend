@@ -42,4 +42,33 @@
 </select>
 <!-- 아이디, 비밀번호가 맞으면 값1 -->
 
+
+<!-- 아이디찾기 -->
+<select id="findID" parameterType="String" resultType="String">
+	select member_id
+	from member
+	where member_email= #{member_email}
+</select>
+
+<!-- 비밀번호 찾기 관련 변경 -->
+<update id="findPW" >
+	update member 
+	set member_password = #{member_password} 
+	where member_id = #{member_id}
+</update>
+
+<!-- 비밀번호 찾기 관련 변경2 -->
+<select id="findEmail" resultType="String">
+	select member_email 
+	from member
+	where member_id = #{member_id}
+</select>
+
+<!-- 비밀번호 변경 -->
+<update id="memberChangePw" parameterType="member">
+	update member 
+	set	member_password = #{member_password}
+	where member_id = #{member_id} 
+</update>
+
 </mapper>

@@ -20,4 +20,20 @@ public interface MemberDAO {
 	//패스워드 체크
 	public int passChk (MemberVO vo) throws Exception;
 	
+	///////////////
+	
+	//비밀번호 변경
+	public void memberChangePw(MemberVO vo)throws Exception;
+	
+	// 비밀번호 변경
+	public int updatePw(MemberVO vo) throws Exception;
+
+	//아이디 찾기
+	public String findID(String member_email)  throws Exception;
+	
+	public String findEmail(String member_id)  throws Exception;
+
+	// 비밀번호 변경
+	public int update_pw(MemberVO vo) throws Exception;
+	
 }
