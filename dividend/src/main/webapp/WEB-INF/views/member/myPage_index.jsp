@@ -11,6 +11,7 @@
 	type="text/css">
 <script
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<%@ include file="../include/head.jsp"%>
 <style type="text/css">
 span {
 	float: left;

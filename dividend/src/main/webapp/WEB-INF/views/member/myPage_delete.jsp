@@ -5,9 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>회원 탈퇴</title>
-
 <style type="text/css">
-		
 		@import url(https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&display=swap);
 		:root{
 		--blue:#eb6864;
@@ -17,10 +15,8 @@
 		#password1,#password,#id{
 			width:500px;
 		}
-
 </style>
-
-
+<%@ include file="../include/head.jsp"%>
 <script type="text/javascript">
 	$(function() {
 		// 취소
@@ -35,8 +31,6 @@
 				$("#password").focus();
 				return false;
 			}
-			
-			
 		});
 	});
 </script>

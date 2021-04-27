@@ -315,9 +315,7 @@ create table freeboard(
 	frboard_content		clob,				-- 게시글 내용
 	frboard_count		number default 0,			-- 게시글 조회수
 	frboard_regdate		date default sysdate,		-- 게시글 작성일자
-	frboard_img		blob,				-- 게시글에 올린 사진,이미지 파일명
-	frboard_re_seq		number,				-- 댓글 번호
-	frboard_re_ref		varchar2(2000)			-- 댓글 내용
+	frboard_img		blob			-- 게시글에 올린 사진,이미지 파일명
 );
 
 create table reple (

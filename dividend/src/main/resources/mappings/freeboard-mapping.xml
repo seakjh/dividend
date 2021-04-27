@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="FreeBoardDAOTemp">
+
+	<insert id="insertBoard" parameterType="freeboard">
+		insert into freeboard(frboard_seq, member_id, frboard_title, frboard_content, frboard_img)
+		values((select nvl(max(frboard_seq), 0)+1 from freeboard),#{member_id},#{frboard_title},#{frboard_content},#{frboard_img})
+	</insert>
+	
+	<update id="updateBoard">
+		update freeboard set frboard_title=#{frboard_title},
+		frboard_content=#{frboard_content} where frboard_seq=#{frboard_seq}
+	</update>
+	<delete id="deleteBoard">
+		delete freeboard where frboard_seq=#{frboard_seq}
+	</delete>
+	<select id="getBoard" resultType="freeboard">
+		select * from freeboard where frboard_seq=#{frboard_seq}
+	</select>
+	<select id="getBoardList_T" resultType="freeboard">
+		select * from freeboard
+		where frboard_title like '%'||#{searchKeyword}||'%'
+		order by frboard_seq desc
+	</select>
+	<select id="getBoardList_C" resultType="freeboard">
+		select * from freeboard
+		where frboard_content like '%'||#{searchKeyword}||'%'
+		order by frboard_seq desc
+	</select>
+</mapper>

@@ -6,7 +6,7 @@
 <title>주식 복리 계산기</title>
 <link href="resources/css/bootstrap.css" rel="stylesheet"
 	type="text/css">
-
+<%@ include file="../include/head.jsp"%>
 <style>
 table.rate_table {
 	border-collapse: collapse;

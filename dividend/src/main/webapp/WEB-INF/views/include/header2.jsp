@@ -3,7 +3,13 @@
 <%
 	String member_id = (String)session.getAttribute("member_id");
 %>
-
+<!-- CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<!-- 테마 -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<link href="resources/css/bootstrap.css" rel="stylesheet" type="text/css">
 <style type="text/css">
 	
 	#logo{

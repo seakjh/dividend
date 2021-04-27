@@ -1,76 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <script src="./resources/js/jquery-3.6.0.js"></script>
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
-<!-- CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-<!-- 테마 -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-<link href="resources/css/bootstrap.css" rel="stylesheet" type="text/css">
+
 <meta name="description" content="The Baedangtop website's menu page" /> 
 <meta name="author" content="choi.you.min@gmail.com" /> 
-<style>
-	#logo{
-		height:40px;
-	}
-	#topMenu { 
-		height: 30px; 
-        width: 100%; 
-      	position: fixed;
-      	top:0; left:0; 
-    }
-    #topMenu ul{
-      	font-size: 0;
-    }
-    #topMenu ul li { 
-		list-style: none; 
-		color: white; 
-		background-color: #2d2d2d; 
-		display: inline-block;
-		vertical-align: middle;
-		line-height: 30px; 
-		vertical-align: middle; 
-		text-align: center;
-		position: relative;
-    }
-    #topMenu ul ul li { 
-      	display: block;
-    }
-    #topMenu ul ul li a{
-      	font-size: 12px;
-		color: #fff;
-		text-decoration: none;
-		padding: 2px 0 3px;
-		display: block;
-    }
-    #topMenu ul ul li a:hover{
-      	background: #666;
-    }
-    #topMenu .menuLink { 
-		text-decoration:none; 
-		color: white; 
-		display: block; 
-		width: 150px; 
-		font-size: 12px; 
-		font-weight: bold; 
-		font-family: "Trebuchet MS", Dotum, Arial;
-    }
-    #topMenu .menuLink:hover {
-		color: #ffcccc; 
-		background-color: #4d4d4d;
-    }
-    ul li ul {
-		display: none;
-		position: absolute;
-		padding: 0;
-		left: 0;
-		width: 100%;
-	}
-	ul li:hover ul {  
-		display:block;
-	}
-	ul li ul li {
-		float:none;
-	}
-</style>
+
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+<script type="text/javascript" src="./resources/js/jquery.waypoints.min.js"></script>
+
+<link rel="stylesheet" href="./resources/css/menu.css" />
+<link rel="stylesheet" href="./resources/css/bootstrap.css" />
+<script src="./resources/js/bootstrap.js"></script>

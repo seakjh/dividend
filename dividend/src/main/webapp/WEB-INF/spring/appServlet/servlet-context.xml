@@ -25,7 +25,7 @@
 	</beans:bean>
 	
 	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" >
-		<beans:property name="maxUploadSize" value="100000"></beans:property>
+		<beans:property name="maxUploadSize" value="1000000"></beans:property>
 	</beans:bean>
 	
 	<!-- 예외 처리 설정 방법2 : XML 이용 설정 

@@ -26,4 +26,14 @@ public class UtilController {
 		return "util/rate_table2";
 	}
 	
+	@RequestMapping(value="projectMember.do", method = RequestMethod.GET)
+	public String projectMember(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		return "util/projectMember";
+	}
+	
+	@RequestMapping(value="test_investment.do", method = RequestMethod.GET)
+	public String test_investment(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		return "util/test_investment";
+	}
+	
 }

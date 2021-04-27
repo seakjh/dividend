@@ -1,4 +1,4 @@
-package com.baedang.view.board;
+package com.baedang.view.freeboard;
 
 import java.io.File;
 import java.io.IOException;

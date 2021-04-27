@@ -198,14 +198,12 @@ $(function() {
 				</c:forEach>
 			</table>
             <br>
-            <button id="btnUpdate">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;수정
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+            <!-- 
             <button type="button" id="btnDelete">장바구니 비우기</button>	
+             -->
 		</c:otherwise>
 	</c:choose>
 	<br>
-	<button type="button" id="btnList">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;상품목록
-	&nbsp;&nbsp;&nbsp;&nbsp;</button>
 <!-- 
 	<button id="addBtn" onclick="moreList();">더보기</button>
 	 -->

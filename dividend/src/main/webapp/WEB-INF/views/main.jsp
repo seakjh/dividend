@@ -8,9 +8,7 @@
 <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes" />
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./resources/css/main.css" />
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="./resources/js/jquery.waypoints.min.js"></script>
-
 <style type="text/css">
 a {
 	text-decoration: none;

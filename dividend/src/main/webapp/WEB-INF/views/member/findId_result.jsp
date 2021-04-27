@@ -4,6 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+<%@ include file="../include/head.jsp"%>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script>
 	$(function(){

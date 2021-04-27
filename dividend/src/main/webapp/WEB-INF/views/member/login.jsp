@@ -165,6 +165,12 @@
       font-size: 13px;
       line-height: 15px;
    }
+   a {
+   		text-decoration: none;
+   }
+   a:hover {
+		color: #fcc;
+	}
 </style>
 
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -172,7 +178,7 @@
 <script src="https://kit.fontawesome.com/51db22a717.js"
 	crossorigin="anonymous"></script>
 <script type="text/javascript">
-       var user_id = "<%=(String) session.getAttribute("member_id")%>
+       var member_id = "<%=(String) session.getAttribute("member_id")%>
 	";
 	function logout() {
 		window.location.href = "logout.do";
@@ -182,7 +188,7 @@
 
 <body>
 	<script>
-		if (user_id == null) {
+		if (member_id == null) {
 	</script>
 	<div class="main-container">
 		<div class="main-wrap">
@@ -218,13 +224,14 @@
 						<button>
 							<i class="fas fa-align-justify"></i>
 							<span>
-								<a href="/app">Register</a>
+								<a href="join.do">Register</a>
 							</span>
 						</button>
 					</li>
 				</ul>
-				<p class="forget-msg">Forgot your Username or Password? | Sign
-					up</p>
+				<p class="forget-msg">
+					Forgot your <a href="findId.do">Username</a> or <a href="findPw.do">Password?</a> | <a href="join.do">Sign up</a>
+				</p>
 			</section>
 			<footer>
 				<div class="copyright-wrap">
