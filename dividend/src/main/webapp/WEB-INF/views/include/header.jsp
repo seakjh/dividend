@@ -71,6 +71,8 @@ nav ul li {
 footer {
 	width: 100%;
 	display: flex;
+	position: relative;
+	bottom: 0;
 }
 .copyright {
     padding-top: 1rem;
@@ -96,8 +98,7 @@ footer {
 		        		</ul>
 		        </li>
 		        <li><a class="menuLink" href="getDividendMain.do">TOP LINE</a></li>
-		        <li><a class="menuLink" href="boardList.do">COMMUNITY</a></li>
-		        <!-- <li><a class="menuLink" href="#">NOTICE</a></li> -->
+		        <li><a class="menuLink" href="getBoardList.do">COMMUNITY</a></li>
 		        <li>
 		        	<a class="menuLink" href="#">UTILITY</a>
 		        		<ul class="submenu">

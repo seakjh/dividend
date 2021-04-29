@@ -1,11 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<% String member = (String)session.getAttribute("member_id"); %>
+<% 
+	String member = (String)session.getAttribute("member_id");
+/* 	FreeboardVO freeboard = (FreeboardVO)session.getAttribute("Freeboard");
+	System.out.println(freeboard.getFrboard_seq()); */
+%>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>게시글 작성</title>
+<title>글 수정</title>
 <%@include file="../include/head.jsp" %>
 <style type="text/css">
 .table {
@@ -17,7 +21,7 @@
 
 .table th {
    color: white;
-   background: #E386B2;
+   background: #ffcccc;
    font-size: 14px;
    text-align: center;
    width: 200px;
@@ -94,35 +98,29 @@ button:hover {
    font-size: 1.2em;
    letter-spacing: 1px;
    color: rgb(120, 120, 120);
-} 
-	textarea {
-	resize: none;
-	}
+}
 </style>
+
 </head>
 <body>
 <%@include file="../include/header.jsp" %>
 	<center>
-		<form action="insertBoard.do" method="POST"  enctype="multipart/form-data">
+		<form action="updateBoard.do" method="POST">
+			<input type="hidden" name="frboard_seq" value="${ freeboard.frboard_seq }" >
 			<input type="hidden" name="member_id" value="<%=member %>" >
 			<table class="table">
 				<tr class="sub_table">
 					<td>
-						<input type="text" class="form-control" name="frboard_title" size="50" placeholder="제목을 입력해주세요." />
+						<input type="text" class="form-control" name="frboard_title" size="50" placeholder="제목을 입력해주세요." value="${ freeboard.frboard_title }" />
 					</td>
 				</tr>
 				<tr class="sub_table">
 					<td>
-						<input type="file" class="form-control" name="uploadFile">
-					</td>
-				</tr>
-				<tr class="sub_table">
-					<td>
-						<textarea  class="form-control" rows="13" id="frboard_content" name="frboard_content" placeholder="내용을 입력하세요."></textarea>
+						<textarea class="form-control" rows="13" id="frboard_content" name="frboard_content" placeholder="내용을 입력하세요."></textarea>
 					</td>
 				</tr>
 			</table>
-			<button type="submit">작성</button>
+			<button type="submit">수정</button>
 		</form>
 	</center>
 <%@include file="../include/footer.jsp" %>

@@ -307,17 +307,24 @@ ORDER BY
 
 
 
+select * from freeboard;
+delete from freeboard;
+drop table freeboard purge;
+drop table reple purge;
 --게시판
 create table freeboard(
 	frboard_seq		number 	primary key,		-- 게시글 번호
-	member_id		varchar2(16),			-- 게시글 입력한 id
+	member_id			varchar2(16),			-- 게시글 입력한 id
 	frboard_title		varchar2(100),			-- 게시글 제목
-	frboard_content		clob,				-- 게시글 내용
-	frboard_count		number default 0,			-- 게시글 조회수
-	frboard_regdate		date default sysdate,		-- 게시글 작성일자
-	frboard_img		blob			-- 게시글에 올린 사진,이미지 파일명
+	frboard_content	varchar2(2000),				-- 게시글 내용
+	frboard_count		number default 0,		-- 게시글 조회수
+	frboard_regdate	date default sysdate,		-- 게시글 작성일자
+	frboard_sname	varchar2(100)
 );
-
+select * from reple;
+		select * from reple
+		where frboard_seq = 1
+		order by re_seq desc
 create table reple (
 	re_seq		number primary key,	-- 댓글번호
 	frboard_seq	number,		-- 댓글이 달린 게시글을 확인하기위한 
@@ -325,3 +332,6 @@ create table reple (
 	re_ref		varchar2(2000)	,	-- 댓글 내용
 	re_regdate	date default sysdate	-- 댓글 작성일자
 );
+delete from reple where frboard_seq=3
+
+delete reple where re_seq=3

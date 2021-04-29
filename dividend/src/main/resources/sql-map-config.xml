@@ -8,7 +8,8 @@
 		<typeAlias alias="dividend" type="com.baedang.biz.dividend.DividendVO"/>
 		<typeAlias alias="member" type="com.baedang.biz.member.MemberVO"/>
 		<typeAlias alias="cart" type="com.baedang.biz.cart.CartVO"/>
-		<typeAlias alias="freeboard" type="com.baedang.biz.freeboard.FreeBoardDTO" />
+		<typeAlias alias="freeboard" type="com.baedang.biz.freeboard.FreeboardVO"/>
+		<typeAlias alias="reple" type="com.baedang.biz.freeboard.RepleVO"/>
 	</typeAliases>
 	
 	<!-- Sql Mapper 설정 -->
@@ -16,6 +17,6 @@
 		<mapper resource="mappings/dividend-mapping.xml"/>
  		<mapper resource="mappings/member-mapping.xml"/>
  		<mapper resource="mappings/cart-mapping.xml"/>
-		<mapper resource="mappings/freeboard-mapping.xml" />
+ 		<mapper resource="mappings/freeboard-mapping.xml"/>
 	</mappers>
 </configuration>

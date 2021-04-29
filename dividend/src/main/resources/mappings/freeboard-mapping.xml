@@ -2,15 +2,16 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="FreeBoardDAOTemp">
-
-	<insert id="insertBoard" parameterType="freeboard">
-		insert into freeboard(frboard_seq, member_id, frboard_title, frboard_content, frboard_img)
-		values((select nvl(max(frboard_seq), 0)+1 from freeboard),#{member_id},#{frboard_title},#{frboard_content},#{frboard_img})
+	<insert id="insertBoard" >
+		insert into freeboard(frboard_seq, member_id, frboard_title, frboard_content, frboard_sname)
+		values((select nvl(max(frboard_seq), 0)+1 from freeboard),#{member_id},#{frboard_title},#{frboard_content},#{frboard_sname})
 	</insert>
-	
+	<select id="updateBoardForm" resultType="freeboard">
+		select * from freeboard where  frboard_seq=#{frboard_seq} and member_id=#{member_id}
+	</select>
 	<update id="updateBoard">
 		update freeboard set frboard_title=#{frboard_title},
-		frboard_content=#{frboard_content} where frboard_seq=#{frboard_seq}
+		frboard_content=#{frboard_content} where frboard_seq=#{frboard_seq} and member_id=#{member_id}
 	</update>
 	<delete id="deleteBoard">
 		delete freeboard where frboard_seq=#{frboard_seq}
@@ -18,14 +19,60 @@
 	<select id="getBoard" resultType="freeboard">
 		select * from freeboard where frboard_seq=#{frboard_seq}
 	</select>
+	<select id="countBoard" resultType="int">
+	select count(*) from freeboard
+	</select>
+
 	<select id="getBoardList_T" resultType="freeboard">
-		select * from freeboard
-		where frboard_title like '%'||#{searchKeyword}||'%'
-		order by frboard_seq desc
+	<![CDATA[
+			SELECT * 
+			FROM (
+				SELECT ROWNUM RN, A.* 
+					FROM (
+							select * from freeboard
+							where frboard_title like '%'||#{searchKeyword}||'%'
+							order by frboard_seq desc
+							) A
+					)
+		WHERE RN BETWEEN #{start} AND #{end}
+	]]>
 	</select>
 	<select id="getBoardList_C" resultType="freeboard">
-		select * from freeboard
-		where frboard_content like '%'||#{searchKeyword}||'%'
-		order by frboard_seq desc
+	<![CDATA[
+		SELECT * 
+			FROM (
+				SELECT ROWNUM RN, A.* 
+					FROM (
+						select * from freeboard
+						where frboard_content like '%'||#{searchKeyword}||'%'
+						order by frboard_seq desc
+							) A
+					)
+		WHERE RN BETWEEN #{start} AND #{end}
+	]]>
 	</select>
+	
+	<update id="updateCnt">
+		update freeboard set frboard_count = frboard_count + 1 where frboard_seq=#{frboard_seq}
+	</update>
+	
+	<insert id="insertReple">
+	insert into reple(re_seq, frboard_seq, member_id, re_ref)
+	values((select nvl(max(re_seq), 0)+1 from reple),#{frboard_seq},#{member_id},#{re_ref} )
+	
+	</insert>
+	
+	<select id="reple" resultType="reple">
+		select * from reple
+		where frboard_seq = #{frboard_seq}
+	</select>
+
+	<delete id="deletereple" parameterType="reple">
+		delete from reple where re_seq=#{re_seq}
+	</delete>
+	
+	<delete id="deleteboardreple">
+		delete from reple where frboard_seq=${frboard_seq}
+	</delete>
+	
 </mapper>
