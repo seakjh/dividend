@@ -94,12 +94,31 @@ public class MemberController {
 	
 	//마이페이지 수정
 	@RequestMapping(value="memberUpdate.do", method = RequestMethod.POST)
-	public String registerUpdate(@ModelAttribute("member") MemberVO vo, HttpSession session, Model model) throws Exception{
-		memberService.memberUpdate(vo);
-		session.invalidate();
-		model.addAttribute("msg", "정보수정 되었습니다");
-		model.addAttribute("url", "/app");
-		return "result/message";
+	public String registerUpdate(@ModelAttribute("member") MemberVO vo, HttpServletRequest request, Model model) throws Exception{
+		HttpSession session = request.getSession();
+		MemberVO member = (MemberVO) session.getAttribute("member");		
+		
+		  // 세션에있는 비밀번호
+		String sessionPass = member.getMember_password();   
+		  // vo로 들어오는 비밀번호
+		String voPass = vo.getMember_password();
+		
+		//비밀번호 일치하지 않을 때
+		if(!(sessionPass.equals(voPass))) {
+		      model.addAttribute("msg", "비밀번호가 일치하지 않습니다."); //jsp로 전달.
+		      return "result/error";
+		}	
+		
+		//비밀번호 일치
+		if(sessionPass.equals(voPass)){
+			memberService.memberUpdate(vo);
+			session.invalidate();
+			model.addAttribute("msg", "회원정보가 수정되었습니다. 다시 로그인 해주세요.");
+			model.addAttribute("url", "/app");
+			return "result/message";
+		}
+		
+		return "result/error";
 	}
 	
 	//회원 탈퇴 post 

@@ -6,8 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <title>기본 에러 화면(NullPointerExpt)</title>
+<%@ include file="../include/head.jsp"%>
 </head>
 <body bgcolor="#fff" text="#000">
+<%@ include file="../include/header.jsp"%>
 
 <table width="100%" border="1" cellspacing="0" cellpadding="0">
 	<tr>
@@ -29,5 +31,6 @@
 	</tr>
 </table>
 
+<%@ include file="../include/footer.jsp"%>
 </body>
 </html>

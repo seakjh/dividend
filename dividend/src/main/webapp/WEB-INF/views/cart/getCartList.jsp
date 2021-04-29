@@ -57,7 +57,7 @@ footer {
 
 .table th {
 	color: white;
-	background: #ffcccc;
+	background: #E386B2;
 	font-size: 14px;
 	text-align: center;
 	width: 200px;

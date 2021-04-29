@@ -20,6 +20,7 @@ th {
 	border-width: 2px 0 1px;
 	border-style: solid;
 	border-color: #333;
+	text-align: right !important;
 }
 
 td {
@@ -47,6 +48,95 @@ li {
 
 footer {
 	clear: both;
+}
+
+.table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.table th {
+	color: white;
+	background: #E386B2;
+	font-size: 14px;
+	text-align: center;
+	width: 200px;
+}
+
+.table th, .table td {
+	padding: 10px;
+	border: 1px solid #ddd;
+}
+
+.table th:first-child, .table td:first-child {
+	border-left: 0;
+}
+
+.table th:last-child, .table td:last-child {
+	border-right: 0;
+}
+
+.table tr td:first-child {
+	text-align: right;
+}
+
+.table caption {
+	caption-side: bottom;
+	display: none;
+}
+
+.sub_table {
+	text-align: left;
+}
+
+button {
+	display: inline-block;
+	padding: 12px 24px;
+	background: rgb(220, 220, 220);
+	font-weight: bold;
+	color: rgb(120, 120, 120);
+	border: none;
+	outline: none;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: ease 0.3s;
+}
+
+button:hover {
+	background: #8bc34a;
+	color: #ffffff;
+}
+
+#sub_menu {
+	top: -1.6em;
+	padding: 10px;
+	font-family: sans-serif;
+	font-size: 1em;
+	letter-spacing: 1px;
+	color: rgb(120, 120, 120);
+}
+
+#header1 {
+	top: -1.6em;
+	font-family: sans-serif;
+	font-size: 1.2em;
+	letter-spacing: 1px;
+	color: rgb(120, 120, 120);
+}
+
+#header2 {
+	top: -1.6em;
+	font-family: sans-serif;
+	font-size: 1.2em;
+	letter-spacing: 1px;
+	color: rgb(120, 120, 120);
+}
+.form-control {
+	display: inline !important;
+	width: 150px !important;
+}
+.searchCondition, .searchKeyword{
+	vertical-align: middle;
 }
 </style>
 <%@ include file="../include/head.jsp"%>
@@ -115,10 +205,10 @@ function getList(dividend) {
 	$('#divi-data').empty();
 	
 	$('#divi-data').append(
-		"<tr>"
-		+"<th align='center' width='15%'>종목코드</th>"
-		+"<th align='center' width='15%'>종목명</th>"
-		+"<th align='right' width='5%'>종목유형</th>"
+		"<tr class=sub_table>"
+		+"<th align='right' width='12.5%'>종목코드</th>"
+		+"<th align='right' width='12.5%'>종목명</th>"
+		+"<th align='right' width='10%'>종목유형</th>"
 		+"<th align='right' width='15%'>배당지급월</th>"
 		+"<th align='right' width='12.5%'>배당금</th>"
 		+"<th align='right' width='12.5%'>1년전 배당금</th>"
@@ -128,9 +218,9 @@ function getList(dividend) {
 	);	
 	$.each(dividend, function(i, val) {
 		$('#divi-data').append(
-			"<tr onClick=\"location.href='getDividend.do?corp_code="+this.corp_code+"';\" style='cursor:pointer;'  onMouseOver=\"this.style.background='#fcc'\" onMouseOut=\"this.style.background=''\">"
-			+"<td align='center'>"+this.corp_code+"</td>"
-			+"<td align='center'>"+this.corp_name+"</td>"
+			"<tr class=sub_table onClick=\"location.href='getDividend.do?corp_code="+this.corp_code+"';\" style='cursor:pointer;'  onMouseOver=\"this.style.background='#fcc'\" onMouseOut=\"this.style.background=''\">"
+			+"<td align='right'>"+this.corp_code+"</td>"
+			+"<td align='right'>"+this.corp_name+"</td>"
 			+"<td align='right'>"+this.corp_type+"</td>"
 			+"<td align='right'>"+this.dividend_month+"</td>"
 			+"<td align='right'>"+this.dividend_money+"</td>"
@@ -145,28 +235,28 @@ function getList(dividend) {
 </head>
 <body>
 <!--
-<center>
-</center>
 -->
 <%@ include file="../include/header.jsp" %>
-<table>
-	<tr>
-		<td>
-			<select name="searchCondition" class="searchCondition">
-					<c:forEach items="${conditionMap }" var="option">
-						<option value="${option.value }">${option.key }
-					</c:forEach>
-			</select> 
-			<input name="searchKeyword" class="searchKeyword" type="text" /> 
-			<input type="button" id="submit" value="검색" />
-		</td>
-	</tr>
-</table>
+<center>
 <div id="container">
-	<table id="divi-data">
+	<table class="cnd-srch">
+		<tr>
+			<td>
+				<select name="searchCondition" class="searchCondition form-control">
+						<c:forEach items="${conditionMap }" var="option">
+							<option value="${option.value }">${option.key }
+						</c:forEach>
+				</select> 
+				<input name="searchKeyword" class="searchKeyword form-control" type="text" /> 
+				<input type="button" class="btn btn-primary" id="submit" value="검색" />
+			</td>
+		</tr>
+	</table>
+	<table id="divi-data" class="table">
 	</table>
 	<button id="addBtn" onclick="moreList();">더보기</button>
 </div>
+</center>
 <%@ include file="../include/footer.jsp"%>
 </body>
 </html>

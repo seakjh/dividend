@@ -36,4 +36,9 @@ public class UtilController {
 		return "util/test_investment";
 	}
 	
+	@RequestMapping(value="page_Introduce.do", method = RequestMethod.GET)
+	public String page_Introduce(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		return "util/page_Introduce";
+	}
+	
 }

@@ -6,10 +6,7 @@
 %>
 <style>
 header {
-    /*
-    padding: clamp(3rem, calc(45/1440*100vw), 4.5rem) clamp(3rem, calc(60/1440*100vw), 6rem);
     transition: padding .3s ease;
-    */
 	position: fixed;
     width: 100%;
     padding: 2rem 2rem 2rem 1.5rem;
@@ -28,9 +25,9 @@ header {
     width: 16.5rem;
 }
 #mainlogo{
-	width: 200px;
-	height:40px;
-	display: block;
+	width: 300px;
+	height: auto;
+	display: flex;
 }
 a {
 	color: var(--base-color);
@@ -56,13 +53,37 @@ nav ul li {
     margin: 0;
     padding: 0;
 }
+
+#blank {
+	height: 200px;
+}
+
+#divi-data {
+	color: #626262; 
+	font: 400 0.875rem/1.375rem "Raleway", sans-serif;
+	min-width: 1200px;
+}
+.cnd-srch {
+	color: #626262; 
+	font: 400 0.875rem/1.375rem "Raleway", sans-serif;
+	min-width: 1200px;
+}
+footer {
+	width: 100%;
+	display: flex;
+}
+.copyright {
+    padding-top: 1rem;
+    padding-bottom: 0.375rem;
+    text-align: center;
+    width: 100%;
+}
 </style>
 <header>
 	<div id="p-header">
 		<div id="toplogo">
 			<a href="/app">
-				<img id="mainlogo" alt="배당의 민족" src="${pageContext.request.contextPath}/resources/img/logo_img.jpg">
-				<img id="mainlogo" alt="배당의 민족" src="${pageContext.request.contextPath}/resources/img/logo_txt.jpg">
+				<img id="mainlogo" alt="배당의 민족" src="${pageContext.request.contextPath}/resources/img/toplogo.png">
 			</a>
 		</div>
 		<nav id="topMenu">
@@ -70,7 +91,8 @@ nav ul li {
 		        <li>
 		        	<a class="menuLink" href="/app">SERVICE</a>
 		        		<ul class="submenu">
-		        			<li><a class="submenuLink longLink"  href="projectMember.do">만든 사람</a></li>
+		        			<li><a class="submenuLink longLink"  href="page_Introduce.do">INTRO</a></li>
+		        			<li><a class="submenuLink longLink"  href="projectMember.do">MADE BY</a></li>
 		        		</ul>
 		        </li>
 		        <li><a class="menuLink" href="getDividendMain.do">TOP LINE</a></li>
@@ -111,3 +133,8 @@ nav ul li {
 	<a href="getBoardList.do">자유게시판&nbsp;&nbsp;</a>|&nbsp;&nbsp;
 	<a href="calculate.do">복리계산기&nbsp;&nbsp;</a>|&nbsp;&nbdsp;
 	<a href="directions.do">찾아오시는 길</a>&nbsp;&nbsp; --%>
+	
+	
+<div id="blank">
+&nbsp;
+</div>

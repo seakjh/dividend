@@ -19,6 +19,7 @@
 							$('#result3').empty();
 							$('#result4').empty();
 							$('#result5').empty();
+							$('#result5_1').empty();
 							$('#result6').empty();
 
 							var form_data = $('form').serializeArray();
@@ -44,33 +45,26 @@
 
 							var scoreResult = Number(score);
 
-							if (scoreResult <= 20) {
-								$('#result5')
-										.append(
-												"<h3>안정형</h3><br>예금 또는 적금 수준의 수익률을 기대하며, 투자원금에 손실이 발생하는 것을 원하지 않음.");
-							} else if (20 < scoreResult && scoreResult <= 40) {
-								$('#result5')
-										.append(
-												"<h3>안정추구형</h3><br>투자 원금의 손실위험은 최소화하고, 이자소득이나 배당소득 수준의 안정적인 투자를 목표로 함. 다만 수익을 위해 단기적인 손실을 수용할 수 있으며, 예·적금보다 높은 수익을 위해 자산 중 일부를 변동성 높은 상품에 투자할 의향이 있음.")
-							} else if (40 < scoreResult && scoreResult <= 60) {
-								$('#result5')
-										.append(
-												"<h3>위험중립형</h3><br>투자에는 그에 상응하는 투자 위험이 있음을 충분히 인식하고 있으며, 예·적금보다 높은 수익을 기대할 수 있다면 일정수준의 손실 위험을 감수할 수 있음.")
-							} else if (60 < scoreResult && scoreResult <= 80) {
-								$('#result5')
-										.append(
-												"<h3>적극투자형</h3><br>투자 원금의 보전보다는 위험을 감내하더라도 높은 수준의 투자 수익 실현을 추구함. 투자 자금의 상당 부분을 주식, 주식형 펀드 또는 파생상품 등의 위험자산에 투자할 의향이 있음.")
-							} else {
-								$('#result5')
-										.append(
-												"<h3>공격투자형</h3><br>시장 평균수익률을 훨씬 넘어서는 높은 수준의 투자 수익을 추구하며, 이를 위해 자산가치의 변동에 따른 손실 위험을 적극 수용. 투자자금 대부분을 주식, 주식형 펀드 또는 파생상품 등의 위험자산에 투자할 의향이 있음.")
+							if(scoreResult<=20){
+								$('#result5').append("<h3>안정형</h3><br>예금 또는 적금 수준의 수익률을 기대하며, 투자원금에 손실이 발생하는 것을 원하지 않음.");
+								$('#result5_1').append('<img id="안정형" height="150px;" src="resources/img/test_investment_img/hermit-crab.png">');
+							}else if(20<scoreResult && scoreResult<=40){				
+								$('#result5').append("<h3>안정추구형</h3><br>투자 원금의 손실위험은 최소화하고, 이자소득이나 배당소득 수준의 안정적인 투자를 목표로 함. 다만 수익을 위해 단기적인 손실을 수용할 수 있으며, 예·적금보다 높은 수익을 위해 자산 중 일부를 변동성 높은 상품에 투자할 의향이 있음.")
+								$('#result5_1').append('<img id="안정추구형" height="150px;" src="resources/img/test_investment_img/seahorse.png">');
+							}else if(40<scoreResult && scoreResult<=60){
+								$('#result5').append("<h3>위험중립형</h3><br>투자에는 그에 상응하는 투자 위험이 있음을 충분히 인식하고 있으며, 예·적금보다 높은 수익을 기대할 수 있다면 일정수준의 손실 위험을 감수할 수 있음.")
+								$('#result5_1').append('<img id="위험중립형" height="150px;" src="resources/img/test_investment_img/octopus.png">');
+							}else if(60<scoreResult && scoreResult<=80){
+								$('#result5').append("<h3>적극투자형</h3><br>투자 원금의 보전보다는 위험을 감내하더라도 높은 수준의 투자 수익 실현을 추구함. 투자 자금의 상당 부분을 주식, 주식형 펀드 또는 파생상품 등의 위험자산에 투자할 의향이 있음.")
+								$('#result5_1').append('<img id="위험중립형" height="150px;" src="resources/img/test_investment_img/whale.png">');
+							}else{
+								$('#result5').append("<h3>공격투자형</h3><br>시장 평균수익률을 훨씬 넘어서는 높은 수준의 투자 수익을 추구하며, 이를 위해 자산가치의 변동에 따른 손실 위험을 적극 수용. 투자자금 대부분을 주식, 주식형 펀드 또는 파생상품 등의 위험자산에 투자할 의향이 있음.")
+								$('#result5_1').append('<img id="위험중립형" height="150px;" src="resources/img/test_investment_img/shark.png">');
 							}
-
-							$('#result6')
-									.append(
-											"<br><p style = 'font-size:13px;  color: gray;'>* 위 기준은 금융투자 상품별 투자 위험도 분류의 기본적인 방향을 제시한 것으로 금융투자회사는 동 기준을 참조하여 금융투자 상품별 실질 내용과 위험도를 고려하여 합리적으로 분류"
-													+ "<br>* 집합투자증권의 경우 해당 집합투자증권의 투자설명서에 기재된 투자 위험도에 따라 5단계로 분류</p>")
-
+							
+							$('#result6').append(		
+							"<br><p style = 'font-size:13px;  color: gray;'>* 위 기준은 금융투자 상품별 투자 위험도 분류의 기본적인 방향을 제시한 것으로 금융투자회사는 동 기준을 참조하여 금융투자 상품별 실질 내용과 위험도를 고려하여 합리적으로 분류"
+							+"<br>* 집합투자증권의 경우 해당 집합투자증권의 투자설명서에 기재된 투자 위험도에 따라 5단계로 분류</p>")
 						});
 	});
 </script>
@@ -328,6 +322,7 @@
 		<div id="result2"></div>
 		<div id="result3"></div>
 		<div id="result4"></div>
+	 	<center> <span id="result5_1"></span> </center>
 		<div id="result5"></div>
 		<div id="result6"></div>
 	</div>

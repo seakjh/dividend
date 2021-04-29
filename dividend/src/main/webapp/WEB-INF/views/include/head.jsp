@@ -2,14 +2,17 @@
 <script src="./resources/js/jquery-3.6.0.js"></script>
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
 
+
 <meta name="description" content="The Baedangtop website's menu page" /> 
 <meta name="author" content="choi.you.min@gmail.com" /> 
-
 <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes" />
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
 
 <script type="text/javascript" src="./resources/js/jquery.waypoints.min.js"></script>
+<script src="./resources/app/js/bootstrap.min.js"></script>
 
-<link rel="stylesheet" href="./resources/css/menu.css" />
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./resources/css/menu.css?after" />
 <link rel="stylesheet" href="./resources/css/bootstrap.css" />
-<script src="./resources/js/bootstrap.js"></script>
+<link href="./resources/app/css/fontawesome-all.css" rel="stylesheet">

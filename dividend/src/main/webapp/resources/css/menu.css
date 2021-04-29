@@ -134,12 +134,10 @@ body{
 }
 footer{
 	padding-top: 95px;
-	padding-bottom: 15px;
-
+	padding-bottom: 65px;
 	display:flex;
 	flex-direction:column;
 	align-items:center;
-	width:768px;
 }
 .copyright-wrap{
 	display: flex;
@@ -150,18 +148,14 @@ footer{
 footer .copyright-wrap span img{
 	width: 59px;
 	height: 33px;
-	
 }
 footer .copyright-wrap span{
-	font-size: 13px;
+	font-size: 13px !important;
 	line-height: 15px;
 }
 
 #topMenu { 
 	height: 30px; 
-   	position: absolute;
-   	top:0; 
-   	right:0;
    	z-index: 3;
    }
    #topMenu ul{
@@ -170,7 +164,6 @@ footer .copyright-wrap span{
    #topMenu ul li { 
 	list-style: none; 
 	color: #000; 
-	background-color: #fff; 
 	display: inline-block;
 	vertical-align: middle;
 	line-height: 30px; 
@@ -195,8 +188,8 @@ footer .copyright-wrap span{
 	text-decoration:none; 
 	color: #000; 
 	display: block; 
-	width: 150px; 
-	font-size: 20px; 
+	width: 200px; 
+	font-size: 24px; 
 	font-weight: bold; 
 	font-family: "Trebuchet MS", Dotum, Arial;
    }

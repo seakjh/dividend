@@ -22,6 +22,28 @@ span {
 	width: 500px;
 	height: 200px;
 }
+.bg-primary-pink {
+	background: #E386B2 !important;
+}
+
+.button-p {
+  display: inline-block;
+  padding: 12px 24px;
+  background: rgb(220, 220, 220);
+  font-weight: bold;
+  color: rgb(120, 120, 120);
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: ease 0.3s;
+}
+.button-p:hover {
+	text-decoration: none;
+  background: #8bc34a;
+  color: #ffffff;
+}
+
 </style>
 </head>
 <body>
@@ -29,10 +51,10 @@ span {
 	<br>
 	<center>
 		<div class="jumbotron">
-			<h3>${member.member_name} 님환영합니다:)</h3>
-			<p class="lead">This is a simple hero unit, a simple
-				jumbotron-style component for calling extra attention to featured
-				content or information.</p>
+			<h3>${member.member_name}님 환영합니다:)</h3>
+			<p class="lead">
+			여러분을 환영합니다. 다양한 배당탑 서비스를 즐겨보세요.<br>
+			배당탑은 이용자 개인정보 보호를 여러 경영요소 가운데 최우선의 가치로 두고 있습니다.</p>
 			<hr class="my-4">
 			<%-- 
 		 	 <img id="mypage" alt="마이페이지 화면" src="${pageContext.request.contextPath}/resources/img/mypage.jpg">
@@ -41,7 +63,7 @@ span {
 			<table>
 				<tr>
 					<td>
-						<div class="card text-white bg-primary mb-3"
+						<div class="card text-white bg-primary-pink mb-3"
 							style="max-width: 20rem;">
 							<div class="card-header">Member Infomation</div>
 							<div class="card-body">
@@ -53,7 +75,10 @@ span {
 						</div>
 					</td>
 					<td>
-						<div class="card text-white bg-primary mb-3"
+	              	&nbsp;&nbsp;&nbsp;&nbsp;
+	               	</td>					
+					<td>
+						<div class="card text-white bg-primary-pink mb-3"
 							style="max-width: 20rem;">
 							<div class="card-header">Member email</div>
 							<div class="card-body">
@@ -65,24 +90,29 @@ span {
 						</div>
 					</td>
 					<td>
-						<div class="card text-white bg-primary mb-3"
+	               &nbsp;&nbsp;&nbsp;&nbsp;
+	               </td>
+					<td>
+						<div class="card text-white bg-primary-pink mb-3"
 							style="max-width: 20rem;">
 							<div class="card-header">investment</div>
 							<div class="card-body">
-								<h4 class="card-title">나의 종목</h4>
+								<h4 class="card-title">
+									<a href="getCartList.do" style="color: #fff; text-decoration: none;">나의 종목</a>
+								</h4>
 								<p class="card-text">
-									내가 담은 종목 리스트를 보여줍니다.<br>
+									<a href="getCartList.do" style="color: #fff; text-decoration: none;">내가 담은 종목 리스트를 보여줍니다.</a><br>
 								</p>
 							</div>
 						</div>
 					</td>
 				</tr>
 			</table>
-			<p>It uses utility classes for typography and spacing to space
-				content out within the larger container.</p>
+			<p>원칙적으로 이용자 동의 없이 개인정보를 외부에 제공하지 않습니다.</p>
 			<p class="lead">
-				<a class="btn btn-primary btn-lg" href="/app" role="button">홈으로</a>
+				<a class="button-p" href="/app" role="button">홈으로</a>
 			</p>
+			<!--  btn btn-primary btn-lg -->
 		</div>
 	</center>
 	<%@ include file="../include/footer.jsp"%>

@@ -133,7 +133,7 @@ public class MemberServiceImpl implements MemberService {
 
 		// 보내는 사람 EMail, 제목, 내용
 		String fromEmail = "lynn778@naver.com";
-		String fromName = "Spring Homepage";
+		String fromName = "배당탑";
 		String subject = "";
 		String msg = "";
 		
@@ -141,7 +141,7 @@ public class MemberServiceImpl implements MemberService {
 			subject = "배당탑 임시 비밀번호 입니다.";
 			msg += "<div align='center' style='border:1px solid black; font-family:verdana'>";
 			msg += "<h3 style='color: blue;'>";
-			msg += vo.getMember_name() + "님의 임시 비밀번호 입니다. <br>비밀번호를 변경하여 사용하세요.</h3>";
+			msg += "회원님의 임시 비밀번호 입니다. <br>비밀번호를 변경하여 사용하세요.</h3>";
 			msg += "<p>임시 비밀번호 : ";
 			msg += vo.getMember_password() + "</p></div>";
 		}

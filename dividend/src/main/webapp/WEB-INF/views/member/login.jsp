@@ -178,11 +178,25 @@
 <script src="https://kit.fontawesome.com/51db22a717.js"
 	crossorigin="anonymous"></script>
 <script type="text/javascript">
-       var member_id = "<%=(String) session.getAttribute("member_id")%>
-	";
-	function logout() {
-		window.location.href = "logout.do";
-	}
+var member_id = "<%=(String) session.getAttribute("member_id")%>";
+function logout() {
+	window.location.href = "logout.do";
+}
+
+$(function() {
+	$("#signin").click(function() {
+		if ($("#id").val() == "") {
+			alert("아이디를 입력해주세요.");
+			$("#id").focus();
+			return false;
+		}
+		if ($("#pw").val() == "") {
+			alert("비밀번호를 입력해주세요.");
+			$("#pw").focus();
+			return false;
+		}
+	});
+});
 </script>
 </head>
 
@@ -199,13 +213,13 @@
 			</header>
 			<form class="login-input-section-wrap" method="post" action="loginCheck.do">
 				<div class="login-input-wrap">
-					<input placeholder="Username" type="text" name="member_id"></input>
+					<input placeholder="Username" id="id" type="text" name="member_id"></input>
 				</div>
 				<div class="login-input-wrap password-wrap">
-					<input placeholder="Password" type="password" name="member_password"></input>
+					<input placeholder="Password" id="pw" type="password" name="member_password"></input>
 				</div>
 				<div class="login-button-wrap">
-					<button>Sign in</button>
+					<button id="signin">Sign in</button>
 				</div>
 			</form>
 

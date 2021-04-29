@@ -3,36 +3,26 @@
 <%
 	String member_id = (String)session.getAttribute("member_id");
 %>
-<!-- CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-<!-- 테마 -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 <link href="resources/css/bootstrap.css" rel="stylesheet" type="text/css">
 <style type="text/css">
-	
-	#logo{
-		height:40px;
-	}
-	
-	span{
-			float: left;
-			padding: 20px;
-			
-	}
-	
-	
-	
-	
-	
+#logo{
+	height:40px;
+}
+span{
+	float: left;
+	padding: 20px;
+}
+#mainlogo{
+	width: 300px;
+	height: auto;
+	display: flex;
+}
 </style>
 
 <header>
 <br>
 	<a href="/app">
-		<img id="logo" alt="배당의 민족" src="${pageContext.request.contextPath}/resources/img/logo_img.jpg">
-		<img id="logo" alt="배당의 민족" src="${pageContext.request.contextPath}/resources/img/logo_txt.jpg">
+		<img id="mainlogo" alt="배당의 민족" src="${pageContext.request.contextPath}/resources/img/toplogo.png">
 	</a>
 	<br>
 	<br>

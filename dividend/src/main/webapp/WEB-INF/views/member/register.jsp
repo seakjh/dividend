@@ -7,13 +7,6 @@
 <meta charset="UTF-8">
 <title>회원가입</title>
 <%@ include file="../include/head.jsp"%>
-<style type="text/css">
-pre{
-	width: 500px;
-	height: 200px;
-	overflow: scroll;
-}
-</style>
 <style>
   body {
     background: #ffcccc;

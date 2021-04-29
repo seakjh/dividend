@@ -6,21 +6,29 @@
 <head>
 <meta charset="UTF-8">
 <title>기본 에러 화면(ArithmeticExpt)</title>
+<%@ include file="../include/head.jsp"%>
+<style type="text/css">
+table b {
+	color: #fff;
+}
+table {
+	border-bottom: 1px solid #333;
+	border-top: 1px solid #333;
+}
+</style>
 </head>
 <body bgcolor="#fff" text="#000">
 
-<table width="100%" border="1" cellspacing="0" cellpadding="0">
+<%@ include file="../include/header.jsp"%>
+<table width="100%" cellspacing="0" cellpadding="0">
 	<tr>
-		<td align="center" bgcolor="orange"><b>기본 에러 화면</b></td>
+		<td align="center" bgcolor="#E386B2"><b>Message</b></td>
 	</tr>
-</table>
-
-<table width="100%" border="1" cellspacing="0" cellpadding="0" align="center">
 	<tr>
 		<td align="center">
 		<br>
 		<br>
-			Message : ${ exception.message }
+			${ exception.message }
 		<br>
 		<br>
 		<br>
@@ -28,5 +36,6 @@
 	</tr>
 </table>
 
+<%@ include file="../include/footer.jsp"%>
 </body>
 </html>
